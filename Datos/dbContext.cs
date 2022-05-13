@@ -23,7 +23,7 @@ namespace CoopOnlineWeb.MemoryData
 }
 //        public async Task CargarUsuarios(bool forzar = false)
 //        {
-//            oConexion = new MysqlConection("192.168.100.68","VOTAYA","123321asd.","votaya");
+//            oConexion = new MysqlConection("192.168.100.68","VotaYa","MatiCpC2000.","votaya");
 //            if (!Usuarios.Any() || forzar == true)
 //            {
 //                Usuarios.RemoveRange(Usuarios);

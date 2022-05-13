@@ -1,6 +1,105 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+@font-face {
+    font-family: 'Woodcutter Rocks';
+    src: url("'../fonts/Woodcutter Rocks.ttf'") format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Rocks Personal Use';
+    src: url("'../fonts/Rocks Personal Use.ttf'") format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* Le quitamos el formato a los controles */
+input, select, textarea, span {
+    border: none;
+    background: white;
+    box-sizing: border-box;
+    font-family: Verdana;
+    font-size: 12px;
+    line-height: 12px;
+    outline: none;
+    padding: 0;
+    resize: none;
+    width: 300px;
+}
+
+#login {
+    width:100%;
+}
+
+@media (max-width: 360px) {
+}
+
+@media (min-width: 901px)
+{
+    #Cuerpo {
+        flex-direction: row
+    }
+}
+@media (max-width: 900px) {
+    #Cuerpo {
+        flex-direction: column;
+    }
+}
+
+#titleLogin {
+    font-family: 'Woodcutter Rocks';
+    font-size:80px;
+}
+
+#Contenedor {
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(45deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 75%, rgba(0,0,0,0.5942752100840336) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 75%, rgba(0,0,0,0.5942752100840336) 100%);
+    background: linear-gradient(45deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 75%, rgba(0,0,0,0.5942752100840336) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+
+.formRegistro{
+    width:16em !important;
+}
+
+.fake_placeholder {
+    margin-bottom: 10px;
+}
+
+    /* el label emula el aspecto del input */
+    .fake_placeholder label {
+        background-color: white;
+        border: 2px solid silver;
+        display: inline-block;
+        padding: 10px;
+        position: relative;
+    }
+
+    .fake_placeholder span {
+        color: silver;
+        display: inline-block;
+        left: 2px;
+        padding: 5px;
+        position: absolute;
+        transition: 0.25s;
+        top: 9px;
+        width: auto;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+    }
+
+        .fake_placeholder span.reubicar {
+            color: black;
+            font-size: 10px;
+            font:900;
+            top: -12px;
+        }
+
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -8,9 +107,6 @@ a.navbar-brand {
 }
 
 /* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
 
 .btn-primary {
   color: #fff;

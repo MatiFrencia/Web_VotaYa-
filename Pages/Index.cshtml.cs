@@ -5,10 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VotaYa.Models;
 
 namespace VotaYa.Pages
 {
-    public class IndexModel : PageModel
+    public class IndexModel : _PageModel
     {
         private readonly ILogger<IndexModel> _logger;
 
@@ -19,7 +20,7 @@ namespace VotaYa.Pages
 
         public void OnGet()
         {
-
+            ViewData["MostrarLayout"] = true;
         }
     }
 }

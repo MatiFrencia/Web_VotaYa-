@@ -1,0 +1,38 @@
+﻿
+@font-face {
+    font-family: 'Woodcutter Rocks';
+    src: url("'../fonts/Woodcutter Rocks.ttf'") format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Rocks Personal Use';
+    src: url("'../fonts/Rocks Personal Use.ttf'") format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+@media (max-width: 380px) {
+
+}
+a {
+    text-decoration: none !important;
+    background-color: inherit !important;
+}
+span {
+    background-color: inherit
+}
+
+    .error {
+        /*background-color: lightgray;*/
+        border-radius: 40px;
+        text-align: center;
+        overflow-wrap: break-word;
+        width: 25em;
+        color: black;
+        opacity: 1;
+        font-size: 36px;
+        width: 100%;
+        font-family: "Rocks Personal Use";
+        font-style: normal;
+    }

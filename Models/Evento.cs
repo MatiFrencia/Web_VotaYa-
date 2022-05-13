@@ -2,21 +2,22 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading.Tasks;
 using VotaYa.Util;
 
 namespace VotaYa.Models
 {
     public class Evento
     {
-        private int COD_EV { get; set; }
-        private DateTime FechaCreacion { get; set; }
-        private DateTime FechaInicio { get; set; }
-        private DateTime FechaFin { get; set; }
-        private List<Show> Presentaciones { get; set; }
-        private List<Participante> Participantes { get; set; }
-        private Host Host { get; set; }
+        public int COD_EV { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFin { get; set; }
+        public List<Show> Presentaciones { get; set; }
+        public List<Participante> Participantes { get; set; }
+        public Host Host { get; set; }
 
-        public List<Show> CalcularGanadores()
+        public async Task<List<Show>> CalcularGanadores()
         {
             List<Show> lstGanadores = null;
             List<Voto> lstVotos = null;
@@ -30,7 +31,7 @@ namespace VotaYa.Models
 
                     foreach (System.Data.DataRow dr in votos.Rows)
                     {
-                        Voto oVoto = clsVoto.CrearVoto(dr);
+                        Voto oVoto = await clsVoto.CrearVoto(dr);
 
                         lstVotos.Add(oVoto);
                     }

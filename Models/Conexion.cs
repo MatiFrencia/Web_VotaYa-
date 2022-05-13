@@ -7,10 +7,10 @@ namespace VotaYa.Models
 {
     public class Conexion
     {
-        private string MySQL_Server { get; set; }
-        private string MySQL_User { get; set; }
-        private string MySQL_Password { get; set; }
-        private string MySQL_Database { get; set; }
+        public string MySQL_Server { get; set; }
+        public string MySQL_User { get; set; }
+        public string MySQL_Password { get; set; }
+        public string MySQL_Database { get; set; }
 
 
         public string GetMysqlServer()

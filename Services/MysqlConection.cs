@@ -15,11 +15,12 @@ namespace Services.Utils
 {
     public class MysqlConection : IDisposable
     {
-        private static string strConnection = "server=192.168.100.68;" +
-                                       "uid=VOTAYA;" +
-                                       "pwd=123321asd.;" +
+        public static string strConnection = "server=192.168.100.68;" +
+                                       "uid=VotaYa;" +
+                                       "pwd=MatiCpC2000;" +
                                        " database=votaya;" +
-                                       "persistsecurityinfo=True";
+                                        "Port=3306;" +
+                                       "persistsecurityinfo=True;";
 
         public MySqlConnection oConexionGral;
 
@@ -38,7 +39,7 @@ namespace Services.Utils
         {
             if (string.IsNullOrEmpty(Server))
                 Server = "192.168.100.68";
-            strConnection = "server=" + Server + ";uid=" + User + ";pwd=" + Pass + "; database=" + Base + ";persistsecurityinfo=True";
+            strConnection = "server=" + Server + ";uid=" + User + ";pwd=" + Pass + "; database=" + Base + ";persistsecurityinfo=True;";
             CrearConexion();
         }
         public MysqlConection(Conexion oConn)
@@ -63,7 +64,6 @@ namespace Services.Utils
             {
                 oConexionGral.Close();
                 oConexionGral.Dispose();
-                oConexionGral.ClearAllPoolsAsync();
             }
             oConexionGral = null;
         }
@@ -186,7 +186,7 @@ namespace Services.Utils
             
             return true;
         }
-        private async Task ChequearCampo(string Tabla, string Campo, string Tipo = "INT NULL DEFAULT '0'")
+        public async Task ChequearCampo(string Tabla, string Campo, string Tipo = "INT NULL DEFAULT '0'")
         {
             if (!await ExisteElCampo(Tabla, Campo))
             {
@@ -194,7 +194,7 @@ namespace Services.Utils
                 await EjecutarcomandoAsync(Query);
             }
         }
-        private async Task<bool> ExisteElCampo(string Tabla, string Campo)
+        public async Task<bool> ExisteElCampo(string Tabla, string Campo)
         {
             string Query = "SHOW COLUMNS FROM `" + Tabla + "` LIKE '" + Campo + "';";
             return await HayRegistros(Query);

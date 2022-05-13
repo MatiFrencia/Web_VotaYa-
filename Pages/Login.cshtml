@@ -1,0 +1,90 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model VotaYa.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<div id="Contenedor" class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="left:0; right:0; padding-bottom:10em">
+    <article id="Cuerpo" class="d-flex">
+        <div>
+            <img src="/img/MICRO-HAND.png" class="w-100" />
+        </div>
+        <div>
+            <div class="d-flex flex-column flex-nowrap justify-content-center align-items-center w-100">
+                <h1 id="titleLogin">VOTA YA!</h1>
+
+                <form name="Login" style="width:90%" method="POST">
+                    <div class="form-group">
+                        <div class="fake_placeholder">
+                            <label class="label w-100">
+                                <span>Correo electrónico</span>
+                                <input id="email" class="inputs w-100" type="text" name="Email" autocomplete="off" />
+                            </label>
+                        </div>
+                        <div class="fake_placeholder">
+                            <label class="label w-100">
+                                <span>Contraseña</span>
+                                <input id="pwd" class="inputs w-100" type="password" name="Pwd" autocomplete="off" />
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-outline-dark font-weight-bolder" id="login" >Entrar</button>
+                    </div>
+                    <button type="button" class="btn btn-outline-dark w-100" data-toggle="modal" data-target="#ModalRegistro" id="Registrar">Registrarse</button>
+                </form>
+
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="ModalRegistro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="Registro" method="post">
+                            <div class="form-group" style="width:100%">
+                                <div class="fake_placeholder formRegistro">
+                                    <label class="label w-100">
+                                        <span>Correo electrónico</span>
+                                        <input id="emailNuevo" class="inputs w-100" type="text" name="EmailNuevo" autocomplete="off" />
+                                    </label>
+                                </div>
+                                <div class="fake_placeholder formRegistro">
+                                    <label class="label w-100">
+                                        <span>Contraseña</span>
+                                        <input id="pwdNueva" class="inputs w-100" type="password" name="PwdNueva" autocomplete="off" />
+                                    </label>
+                                </div>
+                                <div class="fake_placeholder formRegistro">
+                                    <label class="label w-100">
+                                        <span>Confirmar Contraseña</span>
+                                        <input id="pwdNuevaRepetida" class="inputs w-100" type="password" name="PwdNuevaRepetida" autocomplete="off" />
+                                    </label>
+                                </div>
+                                <div class="fake_placeholder formRegistro">
+                                    <label class="label w-100">
+                                        <span>Nombre</span>
+                                        <input id="nombre" class="inputs w-100" type="text" name="Nombre" autocomplete="off" />
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" onclick="RegistrarUsuario()" class="btn btn-outline-dark">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/js/Login.js"></script>
