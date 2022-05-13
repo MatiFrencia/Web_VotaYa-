@@ -268,7 +268,7 @@ namespace VotaYa.Util
         static internal class Crypto
         {
             // Define the secret salt value for encrypting data
-            private static readonly byte[] salt = Encoding.ASCII.GetBytes("Mi#App#SeCuRiTy");
+            public static readonly byte[] salt = Encoding.ASCII.GetBytes("Mi#App#SeCuRiTy");
 
             /// <summary>
             /// Takes the given text string and encrypts it using the given password.
@@ -318,7 +318,7 @@ namespace VotaYa.Util
             /// <returns>The memory crypt.</returns>
             /// <param name="data">Data.</param>
             /// <param name="transform">Transform.</param>
-            private static byte[] InMemoryCrypt(byte[] data, ICryptoTransform transform)
+            public static byte[] InMemoryCrypt(byte[] data, ICryptoTransform transform)
             {
                 MemoryStream memory = new MemoryStream();
                 using (Stream stream = new CryptoStream(memory, transform, CryptoStreamMode.Write))
@@ -334,7 +334,7 @@ namespace VotaYa.Util
             /// </summary>
             /// <returns>The algorithm.</returns>
             /// <param name="encryptionPassword">Encryption password.</param>
-            private static RijndaelManaged GetAlgorithm(string encryptionPassword)
+            public static RijndaelManaged GetAlgorithm(string encryptionPassword)
             {
                 // Create an encryption key from the encryptionPassword and salt.
                 var key = new Rfc2898DeriveBytes(encryptionPassword, salt);
@@ -353,7 +353,7 @@ namespace VotaYa.Util
         static internal class RandomNumberGenerator
         {
             // Generate a random number between two numbers    
-            private static int RandomNumber(int min, int max)
+            public static int RandomNumber(int min, int max)
             {
                 Random random = new Random();
                 return random.Next(min, max);
@@ -361,7 +361,7 @@ namespace VotaYa.Util
 
             // Generate a random string with a given size and case.   
             // If second parameter is true, the return string is lowercase  
-            private static string RandomString(int size, bool lowerCase)
+            public static string RandomString(int size, bool lowerCase)
             {
                 StringBuilder builder = new StringBuilder();
                 Random random = new Random();

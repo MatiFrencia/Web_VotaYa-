@@ -15,7 +15,7 @@ namespace Services.Utils
 {
     public class MysqlConection : IDisposable
     {
-        private static string strConnection = "server=192.168.100.68;" +
+        public static string strConnection = "server=192.168.100.68;" +
                                        "uid=VOTAYA;" +
                                        "pwd=123321asd.;" +
                                        " database=votaya;" +
@@ -186,7 +186,7 @@ namespace Services.Utils
             
             return true;
         }
-        private async Task ChequearCampo(string Tabla, string Campo, string Tipo = "INT NULL DEFAULT '0'")
+        public async Task ChequearCampo(string Tabla, string Campo, string Tipo = "INT NULL DEFAULT '0'")
         {
             if (!await ExisteElCampo(Tabla, Campo))
             {
@@ -194,7 +194,7 @@ namespace Services.Utils
                 await EjecutarcomandoAsync(Query);
             }
         }
-        private async Task<bool> ExisteElCampo(string Tabla, string Campo)
+        public async Task<bool> ExisteElCampo(string Tabla, string Campo)
         {
             string Query = "SHOW COLUMNS FROM `" + Tabla + "` LIKE '" + Campo + "';";
             return await HayRegistros(Query);
