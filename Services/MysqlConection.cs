@@ -15,9 +15,9 @@ namespace Services.Utils
 {
     public class MysqlConection : IDisposable
     {
-        public static string strConnection = "server=192.168.100.68;" +
+        public static string strConnection = "server=200.58.100.110;" +
                                        "uid=VotaYa;" +
-                                       "pwd=MatiCpC2000;" +
+                                       "pwd=MatiCpC2000.;" +
                                        " database=votaya;" +
                                         "Port=3306;" +
                                        "persistsecurityinfo=True;";

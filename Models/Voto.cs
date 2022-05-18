@@ -11,14 +11,14 @@ namespace VotaYa.Models
     {
         public int COD_VOT { get; set; }
         public Show oShow { get; set; }
-        public Participante oParticipante { get; set; }
+        public Participacion oParticipante { get; set; }
         public DateTime Fecha { get; set; }
         public Terna oTerna { get; set; }
 
 
         public async Task<Voto> CrearVoto (DataRow dr)
         {
-            Participante clsPart = new Participante();
+            Participacion clsPart = new Participacion();
             Show clsShow= new Show();
             Terna clsTerna = new Terna();
 
@@ -26,19 +26,16 @@ namespace VotaYa.Models
             {
                 COD_VOT = (int)dr["cod_vot"],
                 Fecha = (System.DateTime)dr["fecha"],
-                oParticipante = (await clsPart.GetParticipante((int)dr["cod_par"])).FirstOrDefault(),
+                oParticipante = (await clsPart.GetParticipaciones((int)dr["cod_par"])).FirstOrDefault(),
                 oShow = (await clsShow.GetShow((int)dr["cod_show"])).FirstOrDefault(),
                 oTerna = (await clsTerna.GetTerna((int)dr["cod_ter"])).FirstOrDefault()
             };
             return oVoto;
         }
 
-        public async Task<List<Voto>> GetVoto(int COD_EV, int COD_SHOW = 0)
+        public async Task<List<Voto>> GetVotos(int COD_EV, int COD_SHOW = 0)
         {
             List<Voto> lstReturn = null;
-            Show clsShow = new Show();
-            Participante clsParticipante = new Participante();
-            Terna clsTerna = new Terna();
             using (var oConexion = new MysqlConection())
             {
                 string query = "";
@@ -50,14 +47,7 @@ namespace VotaYa.Models
 
                 foreach (DataRow dr in dtArt.Rows)
                 {
-                    Voto oVoto = new Voto()
-                    {
-                        COD_VOT = (int)dr["cod_vot"],
-                        oShow = (await clsShow.GetShow((int)dr["cod_show"])).FirstOrDefault(),
-                        oParticipante = (await clsParticipante.GetParticipante((int)dr["cod_user"])).FirstOrDefault(),
-                        Fecha = (DateTime)dr["fecha"],
-                        oTerna = (await clsTerna.GetTerna((int)dr["cod_ter"])).FirstOrDefault()
-                    };
+                    Voto oVoto = await CrearVoto(dr);
                     lstReturn.Add(oVoto);
                 }
                 return lstReturn;

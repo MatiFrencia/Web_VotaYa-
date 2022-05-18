@@ -6,5 +6,5 @@
 
 
 <div class="text-center">
-    <h2>PAGINA 2</h2>
+    <h2 id="bienvenida">Bienvenido @Model.oUsuarios.FirstOrDefault(x=> x.Cod_user.ToString() == Request.Cookies["user"]).Nombre !!</h2>
 </div>

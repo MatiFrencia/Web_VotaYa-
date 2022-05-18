@@ -29,10 +29,11 @@ namespace VotaYa.Models
         public List<Voto> oVotos { get; set; }
         public List<Usuario> oUsuarios { get; set; }
         public List<Terna> oTernas { get; set; }
-        public List<Participante> oParticipantes { get; set; }
+        public List<Participacion> oParticipantes { get; set; }
+        public List<Participacion> oParticipaciones { get; set; }
         public List<Show> oShows { get; set; }
         public List<Evento> oEventos { get; set; }
-        public List<Host> oHosts { get; set; }
+        public Participacion oHost { get; set; }
 
 
         #region Cargar objetos
@@ -50,17 +51,17 @@ namespace VotaYa.Models
         {
             Voto clsVotos = new Voto();
 
-            oVotos = await clsVotos.GetVoto(COD_EV, COD_SHOW);
+            oVotos = await clsVotos.GetVotos(COD_EV, COD_SHOW);
 
             if (oVotos != null)
                 return true;
             return false;
         }
-        public async Task<bool> GetUsuarios(int COD_EV, int COD_USER = 0)
+        public async Task<bool> GetUsuario(int COD_USER, int COD_EV = 0)
         {
             Usuario clsUsuario = new Usuario();
 
-            oUsuarios = await clsUsuario.GetUsuario(COD_EV, COD_USER);
+            oUsuarios = await clsUsuario.GetUsuario(COD_USER);
 
             if (oUsuarios != null)
                 return true;
@@ -68,63 +69,57 @@ namespace VotaYa.Models
         }
         public async Task<bool> GetTernas(int COD_EV)
         {
-            Participante clsParticipante = new Participante();
+            Participacion clsParticipante = new Participacion();
 
-            oParticipantes = await clsParticipante.GetParticipante(COD_EV);
+            oParticipantes = await clsParticipante.GetParticipaciones(COD_EV);
 
             if (oParticipantes != null)
                 return true;
             return false;
         }
-        public bool GetParticipantes(int COD_EV, int COD_PART)
+        public async Task<bool> GetParticipaciones(int COD_USER)
         {
-            Participante clsParticipante = new Participante();
+            Participacion clsParticipante = new Participacion();
             if (oUsuarios != null && oUsuarios.Count != 0)
-                oParticipantes = oUsuarios.Where(x => !x.Host && x.Eventos.FirstOrDefault(z => z.COD_EV == COD_EV) != null)
-                    .Select(x => clsParticipante.CrearParticipante(
-                   x.COD_USER,
-                   x.Nombre,
-                   x.Mail,
-                   x.Pwd,
-                   x.Eventos
-                   )).ToList();
+                oParticipaciones = await clsParticipante.GetParticipaciones(COD_USER);
+            if (oParticipaciones != null)
+                return true;
+            return false;
+        }
+        public async Task<bool> GetParticipantes(int COD_EV)
+        {
+            Participacion clsParticipante = new Participacion();
+            if (oUsuarios != null && oUsuarios.Count != 0)
+                oParticipantes = await clsParticipante.GetParticipantes(COD_EV);
             if (oParticipantes != null)
                 return true;
             return false;
         }
         public async Task<bool> GetShows(int COD_EV)
         {
-            Participante clsParticipante = new Participante();
+            Show clsParticipante = new Show();
 
-            oParticipantes = await clsParticipante.GetParticipante(COD_EV);
+            oShows = await clsParticipante.GetShow(COD_EV);
 
-            if (oParticipantes != null)
+            if (oShows != null)
                 return true;
             return false;
         }
-        public async Task<bool> GetEventos(int COD_EV)
+        public async Task<bool> GetEventos(int COD_USER, int COD_EV = 0)
         {
-            Participante clsParticipante = new Participante();
+            Evento clsParticipante = new Evento();
 
-            oParticipantes = await clsParticipante.GetParticipante(COD_EV);
+            oEventos = await clsParticipante.GetEventos(COD_USER);
 
-            if (oParticipantes != null)
+            if (oEventos != null)
                 return true;
             return false;
         }
-        public bool GetHosts(int COD_EV)
+        public async Task<bool> GetHost(int COD_EV)
         {
-            Host clsHost = new Host();
-            if (oUsuarios != null && oUsuarios.Count != 0)
-                oHosts = oUsuarios.Where(x => x.Host && x.Eventos.FirstOrDefault(z => z.COD_EV == COD_EV) != null)
-                    .Select(x => clsHost.CrearHost(
-                   x.COD_USER,
-                   x.Nombre,
-                   x.Mail,
-                   x.Pwd,
-                   x.Eventos
-                   )).ToList();
-            if (oHosts != null)
+            Participacion clsParticipacion = new Participacion();
+            oHost = await clsParticipacion.GetHost(COD_EV);
+            if (oHost != null)
                 return true;
             return false;
         }
@@ -133,26 +128,15 @@ namespace VotaYa.Models
 
         public async Task<bool> ValidarUsuario(string email, string pwd)
         {
-            MysqlConection oConn = new MysqlConection();
-            var query = $"SELECT cod_user,clave FROM usuarios where email = '{email}'";
-
-            DataTable user = await oConn.ConsultaAsync(query);
-            if (user != null && user.Rows.Count != 0)
+            Usuario clsUsuario = new Usuario();
+            int cod_user = await clsUsuario.ValidarUsuario(email, pwd);
+            if (cod_user != 0)
             {
-                bool pwdCorrecta = user.Rows[0]["clave"].ToString() == pwd;
-                if (pwdCorrecta)
-                {
-                    Response.Cookies.Append("pwd", pwd);
-                    Response.Cookies.Append("user", user.Rows[0]["cod_user"].ToString());
-                    return true;
-                }
-                else
-                    throw new Exception("Contraseña incorrecta...");
+                Response.Cookies.Append("pwd", pwd);
+                Response.Cookies.Append("user", cod_user.ToString());
+                return true;
             }
-            else
-            {
-                throw new Exception("Correo electrónico no registrado...");
-            }
+            return false;
         }
         public async Task<bool> InsertarUsuario(string email, string pwd, string nombre)
         {

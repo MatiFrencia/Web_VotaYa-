@@ -1,6 +1,9 @@
-﻿document.getElementById("Registrar").addEventListener("click", function () {
-    $('#myform').show();
-});
+﻿var btnRegistrar = document.getElementById("Registrar");
+if (btnRegistrar != null) {
+    btnRegistrar.addEventListener("click", function () {
+        $('#myform').show();
+    });
+}
     $("document").ready(function () {
         var body = document.body;
         var html = document.documentElement;
@@ -9,10 +12,28 @@
         //height = height - restar;
         //restar = document.getElementById("footer").getBoundingClientRect().height;
         //height = height - restar;
-        document.getElementById("Contenedor").style.height = height.toString() + "px";
+        var btnContenedor = document.getElementById("Contenedor");
+        if (btnContenedor != null) {
+            btnContenedor.style.height = height.toString() + "px";
+        }
     });
 
-document.getElementById("login").addEventListener("click", Login);
+var btnLogin = document.getElementById("login");
+if (btnLogin != null) {
+    btnLogin.addEventListener("click", Login);
+}
+
+document.addEventListener('keyup', event => {
+    if (event.keyCode === 13) {
+        var modal_registro = document.getElementById("ModalRegistro");
+        if (modal_registro.style.display != "none" && modal_registro.style.opacity != 0) {
+            document.getElementById("GuardarUsuario").click();
+        }
+        else {
+            document.getElementById("login").click();
+        }
+    }
+}, false)
 
 function Login() {
     var pwd = JSON.stringify(document.getElementById('pwd').value);
@@ -50,23 +71,6 @@ function Login() {
     })
 };
 
-    const inputs = document.querySelectorAll('.fake_placeholder input');
-
-    inputs.forEach(input => {
-        //cuando entramos en el input
-        input.onfocus = () => {
-            //al elemento anterior (el span) le agregamos la clase que la reubica en top
-            input.previousElementSibling.classList.add('reubicar');
-        }
-
-        //cuando salimos del input
-        input.onblur = () => {
-            //si no hay texto, le quitamos la clase reubicar,
-            //para que se superponga con el input
-            if (input.value.trim().length == 0)
-                input.previousElementSibling.classList.remove('reubicar');
-        }
-    });
 
     function RegistrarUsuario() {
         var pwdNueva = JSON.stringify(document.getElementById('pwdNueva').value);

@@ -12,7 +12,7 @@ namespace VotaYa.Util
 {
     public static class Nucleo
     {
-        public static string PathUtiles;
+        public static string PathUtiles = Directory.GetCurrentDirectory();
         public static string GetCarpetaSistema()
         {
             if (System.Reflection.Assembly.GetEntryAssembly() != null)

@@ -1,0 +1,1008 @@
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:10:04
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Table 'votaya.participantes' doesn't exist
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 135
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   SELECT Ev.cod_ev, fecha_creacion, fecha_inicio, fecha_fin, Ev.host
+                                                FROM eventos Ev
+                                                JOIN participantes Par
+                                                ON Ev.cod_ev = Par.cod_ev WHERE Par.cod_user = 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:12:52
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:17:33
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:22:35
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:22:45
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:23:34
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:23:53
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:24:35
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:24:47
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:29:13
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:32:00
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:32:03
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:34:29
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:34:44
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:38:26
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:41:39
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:44:43
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:45:03
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:45:58
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:46:46
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:47:09
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:47:53
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:48:24
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:50:08
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:50:23
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:55:38
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:57:48
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 18:58:36
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:03:37
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:04:00
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:05:01
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:05:10
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:06:28
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:09:37
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:13:10
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:13:32
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:13:48
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:13:52
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:14:14
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 19:29:13
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:12:36
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:15:10
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:15:27
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:15:33
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:15:55
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:16:15
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:17:22
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:17:30
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:19:03
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:19:12
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:20:59
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:24:14
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:24:49
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:26:29
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:26:36
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:28:08
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:28:57
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:29:08
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:30:10
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:30:17
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:31:36
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:31:37
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:32:14
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:33:38
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:33:38
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:34:28
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:40:08
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:40:29
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:46:08
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:47:39
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 27/5/2022 20:56:11
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================

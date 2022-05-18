@@ -4,44 +4,125 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using VotaYa.Util;
 
 namespace VotaYa.Models
 {
     public class Usuario
     {
-        public int COD_USER { get; set; }
+        public int Cod_user { get; set; }
         public string Mail { get; set; }
         public string Pwd { get; set; }
         public string Nombre { get; set; }
-        public List<Evento> Eventos { get; set; }
-        public bool Host { get; set; }
 
-        public async Task<List<Usuario>> GetUsuario(int COD_EV, int COD_USER = 0)
+
+        public async Task<int> ValidarUsuario(string email, string pwd)
         {
-            List<Usuario> lstReturn = null;
-            using (var oConexion = new MysqlConection())
-            {
-                string query = "";
-                Evento clsEvento = new Evento();
-                if (COD_USER != 0)  //Seleccionar 1 Usuario del EVENTO
-                    query = string.Format("Select * from usuarios where cod_user = {0} AND cod_ev = {1}", COD_USER.ToString(), COD_EV.ToString());
-                else    //Seleccionar TODOS los Usuarios del EVENTO
-                    query = string.Format("Select * from usuarios where cod_ev = {0}", COD_EV.ToString());
-                DataTable dtPart = await oConexion.ConsultaAsync(query);
+            MysqlConection oConn = new MysqlConection();
+            var query = $"SELECT cod_user,clave FROM usuarios where email = '{email}'";
 
-                foreach (DataRow dr in dtPart.Rows)
+            DataTable user = await oConn.ConsultaAsync(query);
+            if (user != null && user.Rows.Count != 0)
+            {
+                bool pwdCorrecta = user.Rows[0]["clave"].ToString() == pwd;
+                if (pwdCorrecta)
                 {
-                    Usuario oUser = new Usuario()
-                    {
-                        COD_USER = (int)dr["cod_user"],
-                        Eventos = clsEvento.GetEventos((int)dr["cod_user"]),
-                        Mail = (string)dr["mail"],
-                        Nombre = (string)dr["nombre"],
-                        Pwd = (string)dr["clave"],
-                        Host = (bool)dr["host"]
-                    };
-                    lstReturn.Add(oUser);
+                    return Convert.ToInt32(user.Rows[0]["cod_user"]);
                 }
+                else
+                    throw new Exception("Contraseña incorrecta...");
+            }
+            else
+            {
+                throw new Exception("Correo electrónico no registrado...");
+            }
+        }
+        public async Task<bool> InsertarUsuario(string email, string pwd, string nombre)
+        {
+            MysqlConection oConn = new MysqlConection();
+            var query = $"SELECT email FROM usuarios WHERE email ='{email}'";
+            if (await oConn.HayRegistros(query))
+                throw new Exception("Ya existe una cuenta registrada con ese correo electrónico...");
+
+            query = $"INSERT INTO usuarios (email, clave, nombre, host) VALUES ('{email}','{pwd}','{nombre}','0')";
+            try
+            {
+                int user = await oConn.EjecutarcomandoAsync(query);
+                if (user != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public Usuario CrearUsuario(DataRow dr)
+        {
+            Usuario oParticipacion = new Usuario()
+            {
+                Cod_user = (int)dr["cod_user"],
+                Mail = (string)dr["email"],
+                Pwd = (string)dr["clave"],
+                Nombre = (string)dr["nombre"]
+            };
+            return oParticipacion;
+        }
+
+        public async Task<List<Usuario>> GetUsuarios(int COD_EV)
+        {
+            List<Usuario> lstReturn = new List<Usuario>();
+            try
+            {
+                using (var oConexion = new MysqlConection())
+                {
+                    string query = "";
+                    query = string.Format($"Select * from usuarios where cod_ev = {COD_EV}");
+                    DataTable dtPart = await oConexion.ConsultaAsync(query);
+
+                    foreach (DataRow dr in dtPart.Rows)
+                    {
+                        Usuario oUser = CrearUsuario(dr);
+                        lstReturn.Add(oUser);
+                    }
+                    return lstReturn;
+                }
+            }
+            catch (Exception ex)
+            {
+                Nucleo.GrabarExcepcion(ex, COD_EV, new string[] { "error al consultar usuarios" });
+                return lstReturn;
+            }
+        }
+
+        public async Task<List<Usuario>> GetUsuario(int COD_USER)
+        {
+            List<Usuario> lstReturn = new List<Usuario>();
+            try
+            {
+                using (var oConexion = new MysqlConection())
+                {
+                    string query = "";
+                    query = string.Format($"Select * from usuarios where cod_user = {COD_USER}");
+                    DataTable dtPart = await oConexion.ConsultaAsync(query);
+
+                    foreach (DataRow dr in dtPart.Rows)
+                    {
+                        Usuario oUser = CrearUsuario(dr);
+                        lstReturn.Add(oUser);
+                    }
+                    return lstReturn;
+                }
+            }
+            catch (Exception ex)
+            {
+                Nucleo.GrabarExcepcion(ex, COD_USER, new string[] { "error al consultar usuario" });
                 return lstReturn;
             }
         }
