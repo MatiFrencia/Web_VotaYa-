@@ -20,7 +20,7 @@ namespace VotaYa.Pages
 
         public void OnGet()
         {
-            ViewData["MostrarLayout"] = true;
+            ViewData["MostrarLayout"] = false;
         }
     }
 }
