@@ -105,11 +105,37 @@ namespace VotaYa.Models
                 return true;
             return false;
         }
+        public async Task<bool> RegistrarEvento(string nombre, string descripcion, string fechaInicio, string cod_user)
+        {
+            Evento clsEvento = new Evento();
+
+            bool creado = await clsEvento.RegistrarEvento(nombre, descripcion, fechaInicio, cod_user);
+
+            return creado;
+        }
+        public async Task<bool> IngresarEvento(string codigo, string cod_user)
+        {
+            Evento clsEvento = new Evento();
+
+            bool creado = await clsEvento.IngresarEvento(codigo, cod_user);
+
+            return creado;
+        }
+        
+        public async Task<int> RegistrarParticipacion(string cod_ev, string cod_user, bool host)
+        {
+            Participacion clsEvento = new Participacion();
+
+            int creado = await clsEvento.RegistrarParticipacion(cod_ev, cod_user, host);
+
+            return creado;
+        }
+        
         public async Task<bool> GetEventos(int COD_USER, int COD_EV = 0)
         {
-            Evento clsParticipante = new Evento();
+            Evento clsEvento = new Evento();
 
-            oEventos = await clsParticipante.GetEventos(COD_USER);
+            oEventos = await clsEvento.GetEventos(COD_USER);
 
             if (oEventos != null)
                 return true;
@@ -145,7 +171,7 @@ namespace VotaYa.Models
             if (await oConn.HayRegistros(query))
                 throw new Exception("Ya existe una cuenta registrada con ese correo electrónico...");
 
-            query = $"INSERT INTO usuarios (email, clave, nombre, host) VALUES ('{email}','{pwd}','{nombre}','0')";
+            query = $"INSERT INTO usuarios (email, clave, nombre) VALUES ('{email}','{pwd}','{nombre}')";
             try
             {
                 int user = await oConn.EjecutarcomandoAsync(query);

@@ -16,13 +16,61 @@ namespace VotaYa.Pages
                 return Redirect("./Login");
             if (!await GetEventos(Convert.ToInt32(Request.Cookies["user"])))
                 return Redirect("./Login");
+            ViewData["Usuario"] = oUsuarios.Any() ? oUsuarios.FirstOrDefault(x => x.Cod_user == Convert.ToInt32(Request.Cookies["user"])).Nombre : "";
+            ViewData["MostrarLayout"] = true;
+            var ev = oEventos;
+            return Page();
+        }
+        public async Task<JsonResult> OnGetRegistroEvento(string nombre, string descripcion, string FechaInicio)
+        {
+            ResultResponse result;
+            if (string.IsNullOrEmpty(FechaInicio))
+                return new JsonResult(new ResultResponse() { Respuesta = "Por favor ingrese Fecha y Hora estimada de inicio", Resultado = false, strExtra = "" });
+            if (string.IsNullOrEmpty(nombre))
+                return new JsonResult(new ResultResponse() { Respuesta = "Por favor ingrese un nombre del evento", Resultado = false, strExtra = "" });
+            if (FechaInicio.Contains("vacio"))
+            {
+                return new JsonResult(new ResultResponse() { Respuesta = "Por favor seleccione Fecha y Hora estimada de inicio", Resultado = false, strExtra = "" });
+            }
+
+            if (!await GetUsuario(Convert.ToInt32(Request.Cookies["user"])))
+                Response.Redirect("./Login");
+
             ViewData["Usuario"] = oUsuarios.FirstOrDefault(x => x.Cod_user == Convert.ToInt32(Request.Cookies["user"])).Nombre;
             ViewData["MostrarLayout"] = true;
-            return null;
+            bool creado = await RegistrarEvento(nombre, descripcion, FechaInicio, Request.Cookies["user"]);
+            if (creado)
+            {
+                result = new ResultResponse() { Respuesta = "Evento Registrado", Resultado = true, strExtra = "" };
+            }
+            else
+                result = new ResultResponse() { Respuesta = "Hubo un problema al intentar registrar el evento", Resultado = false, strExtra = "" };
+            if (!await GetEventos(Convert.ToInt32(Request.Cookies["user"])))
+                Response.Redirect("./Login");
+
+            return new JsonResult(result);
         }
-        public async Task<JsonResult> OnGetRegistroEvento(string nombre, string FechaInicio)
+        public async Task<JsonResult> OnGetIngresarEvento(string Codigo)
         {
-            return new JsonResult("asd");
+            ResultResponse result;
+            if (string.IsNullOrEmpty(Codigo))
+                return new JsonResult(new ResultResponse() { Respuesta = "Por favor ingrese un código de evento, este mismo puede pedirselo al creador del evento", Resultado = false, strExtra = "" });
+            if (!await GetUsuario(Convert.ToInt32(Request.Cookies["user"])))
+                Response.Redirect("./Login");
+
+            ViewData["Usuario"] = oUsuarios.FirstOrDefault(x => x.Cod_user == Convert.ToInt32(Request.Cookies["user"])).Nombre;
+            ViewData["MostrarLayout"] = true;
+            bool CodigoCorrecto = await IngresarEvento(Codigo, Request.Cookies["user"]);
+            if (CodigoCorrecto)
+            {
+                result = new ResultResponse() { Respuesta = "Nuevo evento agregado.", Resultado = true, strExtra = "" };
+            }
+            else
+                result = new ResultResponse() { Respuesta = "No se encontró un evento con el código ingresado", Resultado = false, strExtra = "" };
+            if (!await GetEventos(Convert.ToInt32(Request.Cookies["user"])))
+                Response.Redirect("./Login");
+
+            return new JsonResult(result);
         }
     }
 }

@@ -1006,3 +1006,1257 @@ System.Data.Common
 ** COOPERATIVA: 1**INFORMACION EXTRA**
    error al consultar usuario
 =========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:06:21
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:07:19
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:08:55
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:16:35
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:16:50
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 54
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 88
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:28:49
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:29:20
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:29:30
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:29:36
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',28/5/2022 19:29:35,,1)' at line 1
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.InsertGetIdentityAsync(String String) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 482
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   Insert INTO eventos(nombre, fecha_creacion, fecha_inicio, host) VALUES (,28/5/2022 19:29:35,,1)
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:30:28
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',28/5/2022 19:29:35,,1)' at line 1
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.InsertGetIdentityAsync(String String) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 482
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   Insert INTO eventos(nombre, fecha_creacion, fecha_inicio, host) VALUES (,28/5/2022 19:29:35,,1)
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:30:40
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',28/5/2022 19:29:35,,1)' at line 1
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.InsertGetIdentityAsync(String String) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 482
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   Insert INTO eventos(nombre, fecha_creacion, fecha_inicio, host) VALUES (,28/5/2022 19:29:35,,1)
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:32:53
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:33:12
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:33:12
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',2022-05-28 07:33:12,0001-01-01 12:00:00,1)' at line 1
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.InsertGetIdentityAsync(String String) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 482
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   Insert INTO eventos(nombre, fecha_creacion, fecha_inicio, host) VALUES (,2022-05-28 07:33:12,0001-01-01 12:00:00,1)
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:33:37
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:34:45
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',2022-05-28 07:33:41,0001-01-01 12:00:00,1)' at line 1
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.InsertGetIdentityAsync(String String)
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   Insert INTO eventos(nombre, fecha_creacion, fecha_inicio, host) VALUES (,2022-05-28 07:33:41,0001-01-01 12:00:00,1)
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:34:57
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:37:28
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:38:52
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:39:06
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:40:28
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:49:08
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:49:30
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:54:10
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:54:20
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:55:22
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 19:57:05
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:12:16
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:14:40
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:19:32
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:20:17
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:20:24
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:21:30
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:25:13
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:25:45
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:29:31
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:29:59
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:30:28
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:31:38
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:32:01
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:32:27
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:41:16
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:41:28
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:41:33
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:42:05
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 74
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 108
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:42:31
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:43:11
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 20:45:00
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Column 'nombre' does not belong to table Table.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Data.Common
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 21:24:33
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Incorrect integer value: 'True' for column 'host' at row 1
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.InsertGetIdentityAsync(String String) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 482
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   Insert INTO participaciones(cod_ev, cod_user, host) VALUES ('1','5','True')
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 22:02:38
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'eventos' at line 1
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Services.Utils.MysqlConection.Consulta(String pQuery, MySqlConnection oConexion)
+   at Services.Utils.MysqlConection.Consulta(String pQuery)
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String fechaInicio, String cod_user)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento LolaPallooza, 2022-4-28 22:1:31, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 22:03:14
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Table 'eventos' was not locked with LOCK TABLES
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Services.Utils.MysqlConection.Consulta(String pQuery, MySqlConnection oConexion)
+   at Services.Utils.MysqlConection.Consulta(String pQuery)
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String fechaInicio, String cod_user)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento LolaPallooza, 2022-4-28 22:1:31, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 22:03:45
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Table 'eventos' was not locked with LOCK TABLES
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Services.Utils.MysqlConection.Consulta(String pQuery, MySqlConnection oConexion)
+   at Services.Utils.MysqlConection.Consulta(String pQuery)
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String fechaInicio, String cod_user)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento LolaPallooza, 2022-4-28 22:1:31, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 22:07:57
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Table 'eventos' was not locked with LOCK TABLES
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Services.Utils.MysqlConection.Consulta(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 154
+   at Services.Utils.MysqlConection.Consulta(String pQuery) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 194
+   at Services.Utils.MysqlConection.SelectMax(String tabla, String columna) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 48
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String fechaInicio, String cod_user) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 32
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento asdas, 2022-4-28 22:7:26, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 22:09:22
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Table 'eventos' was not locked with LOCK TABLES
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Services.Utils.MysqlConection.Consulta(String pQuery, MySqlConnection oConexion)
+   at Services.Utils.MysqlConection.Consulta(String pQuery)
+   at Services.Utils.MysqlConection.SelectMax(String tabla, String columna)
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String fechaInicio, String cod_user)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento asdas, 2022-4-28 22:7:26, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 22:24:17
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Object cannot be cast from DBNull to other types.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Private.CoreLib
+   at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ToInt32(Object value)
+   at Services.Utils.MysqlConection.SelectMax(String tabla, String columna) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 50
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String fechaInicio, String cod_user) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 30
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento das, 2022-4-28 22:24:2, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 22:26:01
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Object reference not set to an instance of an object.
+-----------------------------------------------------------------------------------------------------------------------------------------
+VotaYa
+   at Services.Utils.MysqlConection.SelectMax(String tabla, String columna)
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String fechaInicio, String cod_user)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento das, 2022-4-28 22:24:2, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 22:36:46
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unable to cast object of type 'System.DBNull' to type 'System.DateTime'.
+-----------------------------------------------------------------------------------------------------------------------------------------
+VotaYa
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 28/5/2022 22:36:55
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unable to cast object of type 'System.DBNull' to type 'System.DateTime'.
+-----------------------------------------------------------------------------------------------------------------------------------------
+VotaYa
+   at VotaYa.Models.Evento.CrearEvento(DataRow dr)
+   at VotaYa.Models.Evento.GetEventos(Int32 COD_USER)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   error al consultar usuario
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 29/5/2022 03:21:22
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: The string 'undefined-undefined-undefined undefined:undefined:undefined' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Private.CoreLib
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String descripcion, String fechaInicio, String cod_user) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 37
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento asddsa, undefined-undefined-undefined undefined:undefined:undefined, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 30/5/2022 19:44:34
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: The string '2022-05-30null' was not recognized as a valid DateTime. There is an unknown word starting at index '10'.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Private.CoreLib
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String descripcion, String fechaInicio, String cod_user) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 37
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento asdads, 2022-05-30null, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 30/5/2022 19:44:47
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: The string '2022-05-30null' was not recognized as a valid DateTime. There is an unknown word starting at index '10'.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Private.CoreLib
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String descripcion, String fechaInicio, String cod_user) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 37
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento asdads, 2022-05-30null, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 30/5/2022 19:45:10
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: The string '2022-05-30null' was not recognized as a valid DateTime. There is an unknown word starting at index '10'.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Private.CoreLib
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String descripcion, String fechaInicio, String cod_user) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 37
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento asdads, 2022-05-30null, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 30/5/2022 19:46:38
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: String '2022-05-3019' was not recognized as a valid DateTime.
+-----------------------------------------------------------------------------------------------------------------------------------------
+System.Private.CoreLib
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at VotaYa.Models.Evento.RegistrarEvento(String nombre, String descripcion, String fechaInicio, String cod_user) in F:\VotaYA!\VotaYa\Models\Evento.cs:line 37
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al registrar el evento assad, 2022-05-3019, 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 30/5/2022 22:47:47
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'cod_ev' in 'where clause'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 185
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   Select * from artistas where cod_ev = 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 30/5/2022 22:48:14
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'cod_ev' in 'where clause'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 185
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   Select * from artistas where cod_ev = 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 16:52:44
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'cod_ev' in 'where clause'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 185
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   Select * from artistas where cod_ev = 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 16:53:05
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'cod_ev' in 'where clause'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 185
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   Select * from artistas where cod_ev = 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 17:04:59
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'cod_ev' in 'where clause'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion)
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   Select * from artistas where cod_ev = 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 17:05:38
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'cod_ev' in 'where clause'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 185
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   Select * from artistas where cod_ev = 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 17:06:58
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'cod_ev' in 'where clause'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion)
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   Select * from artistas where cod_ev = 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 20:05:07
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'asdsaddsa' in 'where clause'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 185
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   Select cod_ev from eventos where codigo = asdsaddsa
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 20:05:56
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'asdsaddsa' in 'where clause'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion)
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   Select cod_ev from eventos where codigo = asdsaddsa
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 20:07:43
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unable to cast object of type 'System.Int32' to type 'System.String'.
+-----------------------------------------------------------------------------------------------------------------------------------------
+VotaYa
+   at VotaYa.Models.Evento.IngresarEvento(String codigo, String cod_user)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al agregar el evento con código = asdsaddsa, usuario = 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 20:07:55
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unable to cast object of type 'System.Int32' to type 'System.String'.
+-----------------------------------------------------------------------------------------------------------------------------------------
+VotaYa
+   at VotaYa.Models.Evento.IngresarEvento(String codigo, String cod_user)
+
+** COOPERATIVA: 1**INFORMACION EXTRA**
+   Error al agregar el evento con código = asdsaddsa, usuario = 1
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 20:09:00
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'host' in 'field list'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.EjecutarcomandoAsync(String Query, MySqlConnection mConnection) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 464
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   INSERT INTO usuarios (email, clave, nombre, host) VALUES ('valerubiolo@GMAIL.COM','n8wNmdoSRHoL/OIJb7s/Hg==','Valentina','0')
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 20:09:11
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'host' in 'field list'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.EjecutarcomandoAsync(String Query, MySqlConnection mConnection) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 464
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   INSERT INTO usuarios (email, clave, nombre, host) VALUES ('valerubiolo@GMAIL.COM','n8wNmdoSRHoL/OIJb7s/Hg==','Valentina','0')
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 31/5/2022 20:09:52
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'host' in 'field list'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.EjecutarcomandoAsync(String Query, MySqlConnection mConnection) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 464
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   INSERT INTO usuarios (email, clave, nombre, host) VALUES ('valerubiolo@GMAIL.COM','n8wNmdoSRHoL/OIJb7s/Hg==','Valentina','0')
+=========================================================================================================================================

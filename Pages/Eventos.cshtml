@@ -1,0 +1,57 @@
+﻿@page
+@model VotaYa.Pages.EventosModel
+@{
+    ViewData["Title"] = Model.oEventos.FirstOrDefault(x => x.COD_EV == Convert.ToInt32(ViewData["Cod_ev"])).Nombre;
+}
+
+<div id="grilla" class="flex-wrap" style="display: flex; justify-content: center; align-items: center; align-content: space-evenly">
+    @foreach (var show in Model.oShows)
+    {
+        <div id="@show.Descripcion.Replace(" ", "-")" class="card card-flip p-3 m-4" onclick="" data-CodEvento="@show" style="width: 18rem;">
+            <div class="card-front w-100 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">@show.Descripcion</h5>
+                    @if (show.Estado == Models.Show.estadoShow.En_curso)
+                    {
+                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-success border-opacity-10 rounded-2">@show.Estado</small>
+                    }
+                    else if (show.Estado == Models.Show.estadoShow.Siguiente)
+                    {
+                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-warning border-opacity-10 rounded-2">@show.Estado</small>
+                    }
+                    else if (show.Estado == Models.Show.estadoShow.Cancelado)
+                    {
+                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-danger border-opacity-10 rounded-2">@show.Estado</small>
+                    }
+                    else if (show.Estado == Models.Show.estadoShow.Finalizado)
+                    {
+                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-info border-opacity-10 rounded-2">@show.Estado</small>
+                    }
+
+                    <ul class="list-group list-group-flush bg-transparent w-100">
+                        <li class="list-group-item bg-transparent">
+                            @if (@Model.oArtistas.FirstOrDefault(x => x.COD_ART == show.cod_art).Foto != null)
+                            {
+                                <img class="w-100" src="@Model.oArtistas.FirstOrDefault(x => x.COD_ART == show.cod_art).Foto.Url" />
+                            }
+                            else
+                            {
+                                <img class="w-100" src="./img/user_default.png" />
+                            }
+                        </li>
+                        <li class="list-group-item bg-transparent">@Model.oArtistas.FirstOrDefault(x => x.COD_ART == show.cod_art).Alias</li>
+                        <li class="list-group-item bg-transparent">@Model.oArtistas.FirstOrDefault(x => x.COD_ART == show.cod_art).Nombre</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-back w-100  h-100 d-flex flex-column justify-content-center align-items-center ">
+                <div>
+                    <button href="#" class="btn btn-outline-danger m-3"><i class="fa-solid fa-user-slash"></i>Eliminar</button>
+                </div>
+                <div>
+                    <button href="#" class="btn btn-outline-primary m-3"><i class="fa-solid fa-pen-to-square"></i>Editar</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>

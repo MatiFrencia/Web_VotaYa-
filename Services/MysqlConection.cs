@@ -42,10 +42,60 @@ namespace Services.Utils
             strConnection = "server=" + Server + ";uid=" + User + ";pwd=" + Pass + "; database=" + Base + ";persistsecurityinfo=True;";
             CrearConexion();
         }
+        public bool IsDbNull(object resultado)
+        {
+            if (resultado == null) return true;
+            return System.DBNull.Value.Equals(resultado);
+        }
+        public int SelectMax(string tabla, string columna)
+        {
+            var dt = Consulta($"SELECT max({columna}) as Last_id FROM {tabla};");
+            if (!IsDbNull(dt.Rows[0][0]))
+            {
+                var id = dt.Rows[0][0];
+                return Convert.ToInt32(id);
+            }
+            else
+                return 0;
+        }
+
         public MysqlConection(Conexion oConn)
             : this(oConn.GetMysqlServer(), oConn.GetMySQL_User(), oConn.GetMySQL_Password(), oConn.GetMySQL_Database())
         {
 
+        }
+
+        public bool Transaccion(object ObjAnonimo)
+        {
+            MySqlTransaction tr = null;
+            try
+            {
+                // Inicializas la transaccion
+                tr = oConexionGral.BeginTransaction();
+                MySqlCommand cmd = new MySqlCommand();
+
+                if (ObjAnonimo.GetType() == Type.GetType("VotaYa.Models.Evento"))
+                {
+                    Evento evento = (Evento)ObjAnonimo;
+                    cmd = new MySqlCommand($"Insert INTO eventos(nombre, descripcion, estado, fecha_creacion, fecha_inicio, host) VALUES ('{evento.Nombre}','{evento.Descripcion}','0','{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}','{evento.FechaInicio.ToString("yyyy-MM-dd hh:mm:ss")}','{evento.Host.Cod_user}')", oConexionGral, tr);
+                    cmd.ExecuteNonQuery();
+
+                    Participacion host = evento.Host;
+
+                    int EsHost = host.Host ? 1 : 0;
+
+                    cmd = new MySqlCommand($"Insert INTO participaciones(cod_ev, cod_user, host) VALUES ('{host.Cod_ev}','{host.Cod_user}','{EsHost}')", oConexionGral, tr);
+                    cmd.ExecuteNonQuery();
+                }
+                tr.Commit();
+                cmd.Dispose();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                tr.Rollback();
+            }
+            return false;
         }
 
         public async Task<bool> ExisteTabla(string Tabla)
@@ -183,7 +233,7 @@ namespace Services.Utils
   PRIMARY KEY(`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 ";
             await EjecutarcomandoAsync(query);
-            
+
             return true;
         }
         public async Task ChequearCampo(string Tabla, string Campo, string Tipo = "INT NULL DEFAULT '0'")

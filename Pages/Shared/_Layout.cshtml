@@ -13,6 +13,7 @@
     <script src="https://kit.fontawesome.com/d8e841cc21.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 
+    
     <!-- Tempus Dominus JavaScript -->
     <script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js"
             crossorigin="anonymous"></script>
@@ -20,6 +21,7 @@
     <!-- Tempus Dominus Styles -->
     <link href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css"
           rel="stylesheet" crossorigin="anonymous">
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
@@ -37,25 +39,25 @@
     {
         <div class="container-fluid">
             <div class="row flex-nowrap">
-                <div id="menuLateral" class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div id="menuLateral" class="col-auto col-md-2 col-xl-2 px-sm-2 px-0 bg-dark">
                     <div class="w-100 d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                         <a href="/" class="w-100 d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                             <span class="fs-5 d-none d-sm-inline">Menu</span>
                         </a>
                         <ul class="w-100 nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                            <li class="nav-item">
+                            <li class="nav-item navicons">
                                 <a href=".\Principal" class="nav-link align-middle px-0">
-                                    <i class="fs-4 bi-house"></i> <span class="ms-2 d-none d-sm-inline">Inicio</span>
+                                    <i id="icons" class="fs-4 bi-house"></i> <span class="ms-2 d-none d-sm-inline">Inicio</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item navicons">
                                 <a href="#ModalCrearEvento" data-toggle="modal" data-target="#ModalCrearEvento" class="nav-link px-0 align-middle">
-                                    <i class="fs-4 fa-solid fa-calendar-plus"></i> <span class="ms-2 d-none d-sm-inline">Creá tu evento</span>
+                                    <i id="icons" class=" fs-4 fa-solid fa-calendar-plus"></i> <span class="ms-2 d-none d-sm-inline">Creá tu evento</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item navicons">
                                 <a href="#ModalAddEvento" data-toggle="modal" data-target="#ModalAddEvento" class="nav-link px-0 align-middle">
-                                    <i class="fs-4 fa-solid fa-plus"></i> <span class=ms-2 d-none d-sm-inline">Ingresá a un evento</span>
+                                    <i id="icons" class="fs-4 fa-solid fa-plus"></i> <span class="ms-2 d-none d-sm-inline">Ingresá a un evento</span>
                                 </a>
                             </li>
                             @*<li class="nav-item">
@@ -96,28 +98,27 @@
                                     </a>
                                 </li>*@
                         </ul>
-                        <hr>
-                        <div class="w-100 dropdown pb-4">
-                            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fs-4 mr-2 bi bi-person-circle"></i>
-                                <span class="d-none d-sm-inline mx-1">@ViewData["Usuario"].ToString()</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                                <li><a class="dropdown-item" href="#">New project...</a></li>
-                                <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Sign out</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="col py-3">
                     <div class="container">
                         <main role="main" class="pb-3">
-                            <div class="position-fixed bottom-0 w-100 d-flex justify-content-end end-0 p-3" style="z-index: 1100">
+                            <div id="fixedBottom" class="position-fixed bottom-0 w-100 d-flex justify-content-between align-items-end end-0 p-3" style="z-index: 1100">
+                                <div class="dropdown pb-4" style="width:15%">
+                                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fs-4 mr-2 bi bi-person-circle"></i>
+                                        <span id="user" class="d-sm-inline mx-1">@ViewData["Usuario"].ToString()</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                                    </ul>
+                                </div>
                                 <div class="toast" style="display:none" role="alert" aria-live="assertive" aria-atomic="true" id="toast">
                                     <div class="toast-header">
                                         <strong class="me-auto">Aviso</strong>
@@ -134,6 +135,38 @@
                 </div>
             </div>
         </div>
+        /*Agregar Evento*/
+        <div class="modal fade" id="ModalAddEvento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Ingresá a un Evento</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="Registro" method="post">
+                            <div class="form-group" style="width:100%">
+                                <div class="d-flex flex-row justify-content-center align-items-center w-100 mb-3">
+                                    <div class="fake_placeholder formRegistro m-0 ml-3">
+                                        <label class="label w-100 m-0" style="border-radius:10px;">
+                                            <span>Codigo</span>
+                                            <input id="Codigo" class="inputs w-100" type="text" name="Codigo" autocomplete="off" />
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button id="IngresarEvento" type="button" onclick="IngresarEvento()" class="btn btn-outline-dark">Ingresar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        /*Crear Evento*/
         <div class="modal fade" id="ModalCrearEvento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -159,6 +192,8 @@
                                          id='inlinePicker'>
                                     </div>
                                 </div>
+                                <label for="descripcion">Descripcion</label>
+                                <textarea class="form-control" id="descripcion" rows="3"></textarea>
                             </div>
                         </form>
                     </div>
@@ -198,11 +233,20 @@
             </footer>*@
     }
     <script>
+        if (window.matchMedia("(max-width: 380px)").matches) {
+            console.log("Hola");
+            document.getElementById("user").innerHTML = "";
+        }
+
+
         var dtpicker = document.getElementById('inlinePicker');
         if (dtpicker != null) {
             new tempusDominus.TempusDominus(document.getElementById('inlinePicker'), {
                 display: {
-                    inline: true
+                    inline: true,
+                    components: {
+                        useTwentyfourHour: true
+                    }
                 }
             });
         }
@@ -242,11 +286,20 @@
         });
 
         function RegistrarEvento() {
-            var inlinePicker = JSON.stringify(document.getElementById('inlinePicker').value);
-            var _nombre = JSON.stringify(document.getElementById('nombre').value);
+            var Hour = document.querySelector('[title="Pick Hour"]').innerHTML;
+            var Minutes = document.querySelector('[title="Pick Minute"]').innerHTML;
+            if (Hour == "") {
+                Hour = "vacio";
+            }
+            if (Minutes == "") {
+                Minutes = "vacio";
+            }
+            var fecha = document.getElementsByClassName("day active")[0].dataset.value + " " + Hour + ":" + Minutes + ":00";
+            var _nombre = document.getElementById('nombre').value;
+            var _descripcion = document.getElementById("descripcion").value;
 
             $.ajax({
-                type: 'POST',
+                type: 'GET',
                 url: '?handler=RegistroEvento',
                 async: false,
                 method: 'GET',
@@ -258,7 +311,8 @@
                 dataType: 'html',
                 data: ({
                     nombre: _nombre,
-                    FechaInicio: inlinePicker
+                    FechaInicio: fecha,
+                    descripcion: _descripcion
                 }),
                 cache: false,
                 traditional: true,
@@ -267,6 +321,7 @@
                     var obj = JSON.parse(response);
                     if (obj.Resultado == true) {
                         showToast(obj.Respuesta);
+                        window.location.reload();
                     }
                     else {
                         showToast(obj.Respuesta);
@@ -274,6 +329,42 @@
                 }
             })
         };
+
+        function IngresarEvento() {
+            var _Codigo = document.getElementById('Codigo').value;
+
+            $.ajax({
+                type: 'GET',
+                url: '?handler=IngresarEvento',
+                async: false,
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json; charset=utf-8', 'Accept': '*/*' },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("RequestVerificationToken",
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                dataType: 'html',
+                data: ({
+                    Codigo: _Codigo
+                }),
+                cache: false,
+                traditional: true,
+                contentType: 'application/json',
+                success: function (response) {
+                    var obj = JSON.parse(response);
+                    if (obj.Resultado == true) {
+                        showToast(obj.Respuesta);
+                        window.location.reload();
+                    }
+                    else {
+                        showToast(obj.Respuesta);
+                    }
+                }
+            })
+        };
+    </script>
+    <script>
+        $(".card").animate({ "opacity": "1" }, 1000);
     </script>
     @RenderSection("Scripts", required: false)
 </body>

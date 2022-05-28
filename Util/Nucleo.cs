@@ -56,6 +56,13 @@ namespace VotaYa.Util
 
             return result;
         }
+
+        public static bool IsDbNull(object resultado)
+        {
+            if (resultado == null) return true;
+            return System.DBNull.Value.Equals(resultado);
+        }
+
         public static void GrabarExcepcion(Exception pEx, int Coop, string[] strAddInfo = null)
         {
             // string ret = "";
