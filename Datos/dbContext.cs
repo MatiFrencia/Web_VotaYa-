@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Services.Utils;
 
-namespace CoopOnlineWeb.MemoryData
+namespace VotaYa.Datos
 {
     public class WebdbContext : DbContext
     {

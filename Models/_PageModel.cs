@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using VotaYa.Datos;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Services.Utils;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace VotaYa.Models
 {
     public class _PageModel : PageModel
     {
+        protected readonly WebdbContext _db;
+
         public class ResultResponse
         {
             [JsonPropertyName("Respuesta")]
@@ -29,6 +32,7 @@ namespace VotaYa.Models
         public List<Voto> oVotos { get; set; }
         public List<Usuario> oUsuarios { get; set; }
         public List<Terna> oTernas { get; set; }
+        public List<Genero> oGeneros { get; set; }
         public List<Participacion> oParticipantes { get; set; }
         public List<Participacion> oParticipaciones { get; set; }
         public List<Show> oShows { get; set; }
@@ -37,6 +41,16 @@ namespace VotaYa.Models
 
 
         #region Cargar objetos
+        public async Task<bool> GetGeneros(int cod_ev)
+        {
+            Genero clsGeneros = new Genero();
+
+            oGeneros = await clsGeneros.GetGeneros(cod_ev);
+
+            if (oGeneros != null)
+                return true;
+            return false;
+        }
         public async Task<bool> GetArtistas(int COD_EV, int COD_ART = 0)
         {
             Artista clsArtista = new Artista();

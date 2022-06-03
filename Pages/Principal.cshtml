@@ -4,33 +4,103 @@
     ViewData["Title"] = "Principal";
 }
 
-
-<div class="text-center">
-    <div class="w-100 d-flex justify-content-center align-content-center">
-        @if (ViewData["Usuario"] != null)
-        {
-            <h1 id="bienvenida">Mis Eventos</h1>
-        }
-        else
-        {
-            <h1 id="bienvenida">Bienvenido !!</h1>
-        }
-    </div>
-    <div id="grilla" class="flex-wrap" style="display: flex; justify-content: center; align-items: center; align-content: space-evenly">
-        @foreach (var evento in Model.oEventos)
-        {
-            <div id="@evento.Nombre.Replace(" ", "-")" class="card p-3 m-4" onclick="irAEvento(this)" data-CodEvento="@evento.COD_EV" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">@evento.Nombre</h5>
-                    <p class="card-text">@evento.Descripcion</p>
+<div id="ContenedorPrincipal" class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="left: 0; right: 0; padding-bottom: 10em">
+    <div class="text-center">
+        <div class="w-100 d-flex justify-content-center align-content-center">
+            @if (ViewData["Usuario"] != null)
+            {
+                <h1 id="bienvenida" class="txtDoble">Mis Eventos</h1>
+            }
+            else
+            {
+                <h1 id="bienvenida">Bienvenido !!</h1>
+            }
+        </div>
+        <div id="grilla" class="flex-wrap" style="display: flex; justify-content: center; align-items: center; align-content: space-evenly">
+            @foreach (var evento in Model.oEventos)
+            {
+                <div id="@evento.Nombre.Replace(" ", "-")" class="card p-3 m-4" onclick="irAEvento(this)" data-CodEvento="@evento.COD_EV">
+                    <div class="card-body">
+                        <h5 class="card-title">@evento.Nombre</h5>
+                        <p class="card-text">@evento.Descripcion</p>
+                    </div>
+                    <ul class="list-group list-group-flush bg-transparent w-100">
+                        <li class="list-group-item bg-transparent">@evento.FechaInicio.ToShortDateString()</li>
+                        <li class="list-group-item bg-transparent">@evento.FechaInicio.ToShortTimeString()</li>
+                        <li class="list-group-item bg-transparent">@evento.Estado</li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush bg-transparent w-100">
-                    <li class="list-group-item bg-transparent">@evento.FechaInicio.ToShortDateString()</li>
-                    <li class="list-group-item bg-transparent">@evento.FechaInicio.ToShortTimeString()</li>
-                    <li class="list-group-item bg-transparent">@evento.Estado</li>
-                </ul>
-            </div>
-        }
+            }
+        </div>
     </div>
 </div>
-<script type="text/javascript" src="~/js/Principal.js"></script>
+@*Agregar Evento*@
+<div class="modal fade" id="ModalAddEvento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Ingresá a un Evento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="Registro" method="post">
+                    <div class="form-group" style="width:100%">
+                        <div class="d-flex flex-row justify-content-center align-items-center w-100 mb-3">
+                            <div class="fake_placeholder formRegistro m-0 ml-3">
+                                <label class="label w-100 m-0" style="border-radius:10px;">
+                                    <span>Codigo</span>
+                                    <input id="Codigo" class="inputs w-100" type="text" name="Codigo" autocomplete="off" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button id="IngresarEvento" type="button" onclick="IngresarEvento()" class="btn btn-outline-dark">Ingresar</button>
+            </div>
+        </div>
+    </div>
+</div>
+@*Crear Evento*@
+<div class="modal fade" id="ModalCrearEvento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Nuevo Evento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="Registro" method="post">
+                    <div class="form-group" style="width:100%">
+                        <div class="d-flex flex-row justify-content-center align-items-center w-100 mb-3">
+                            <div class="fake_placeholder formRegistro m-0 ml-3">
+                                <label class="label w-100 m-0" style="border-radius:10px;">
+                                    <span>Nombre</span>
+                                    <input id="nombre" class="inputs w-100" type="text" name="Nombre" autocomplete="off" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-center w-100 mb-3">
+                            <div class='log-event'
+                                 id='inlinePicker'>
+                            </div>
+                        </div>
+                        <label for="descripcion">Descripcion</label>
+                        <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="GuardarUsuario" type="button" onclick="RegistrarEvento()" class="btn btn-outline-dark">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/js/Principal.js?1"></script>

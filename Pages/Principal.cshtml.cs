@@ -12,12 +12,14 @@ namespace VotaYa.Pages
     {
         public async Task<IActionResult> OnGet()
         {
+            ViewData["bodyimg"] = true;
             if (!await GetUsuario(Convert.ToInt32(Request.Cookies["user"])))
                 return Redirect("./Login");
             if (!await GetEventos(Convert.ToInt32(Request.Cookies["user"])))
                 return Redirect("./Login");
             ViewData["Usuario"] = oUsuarios.Any() ? oUsuarios.FirstOrDefault(x => x.Cod_user == Convert.ToInt32(Request.Cookies["user"])).Nombre : "";
             ViewData["MostrarLayout"] = true;
+            ViewData["Eventos"] = true;
             var ev = oEventos;
             return Page();
         }
@@ -35,7 +37,8 @@ namespace VotaYa.Pages
 
             if (!await GetUsuario(Convert.ToInt32(Request.Cookies["user"])))
                 Response.Redirect("./Login");
-
+            ViewData["Shows"] = false;
+            ViewData["Eventos"] = true;
             ViewData["Usuario"] = oUsuarios.FirstOrDefault(x => x.Cod_user == Convert.ToInt32(Request.Cookies["user"])).Nombre;
             ViewData["MostrarLayout"] = true;
             bool creado = await RegistrarEvento(nombre, descripcion, FechaInicio, Request.Cookies["user"]);
@@ -57,7 +60,8 @@ namespace VotaYa.Pages
                 return new JsonResult(new ResultResponse() { Respuesta = "Por favor ingrese un código de evento, este mismo puede pedirselo al creador del evento", Resultado = false, strExtra = "" });
             if (!await GetUsuario(Convert.ToInt32(Request.Cookies["user"])))
                 Response.Redirect("./Login");
-
+            ViewData["Shows"] = false;
+            ViewData["Eventos"] = true;
             ViewData["Usuario"] = oUsuarios.FirstOrDefault(x => x.Cod_user == Convert.ToInt32(Request.Cookies["user"])).Nombre;
             ViewData["MostrarLayout"] = true;
             bool CodigoCorrecto = await IngresarEvento(Codigo, Request.Cookies["user"]);
