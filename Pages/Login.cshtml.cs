@@ -20,6 +20,7 @@ namespace VotaYa.Pages
 
         public async Task<JsonResult> OnGetLogin(string email, string pwd)
         {
+            ViewData["bodyimg"] = false;
             email = Newtonsoft.Json.JsonConvert.DeserializeObject<string>(email);
             pwd = Newtonsoft.Json.JsonConvert.DeserializeObject<string>(pwd);
             try

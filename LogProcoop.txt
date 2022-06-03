@@ -2260,3 +2260,174 @@ MySql.Data
 ** COOPERATIVA: 0**INFORMACION EXTRA**
    INSERT INTO usuarios (email, clave, nombre, host) VALUES ('valerubiolo@GMAIL.COM','n8wNmdoSRHoL/OIJb7s/Hg==','Valentina','0')
 =========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 3/6/2022 19:08:29
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: The CommandText property has not been properly initialized.
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 185
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 3/6/2022 19:09:45
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: The CommandText property has not been properly initialized.
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 185
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 3/6/2022 19:09:50
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Object reference not set to an instance of an object.
+-----------------------------------------------------------------------------------------------------------------------------------------
+VotaYa
+   at VotaYa.Models.Genero.GetGeneros(Int32 cod_ev) in F:\VotaYA!\VotaYa\Models\Genero.cs:line 58
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   error al consultar generos
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 3/6/2022 19:10:28
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: The CommandText property has not been properly initialized.
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 185
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 3/6/2022 19:11:16
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Object reference not set to an instance of an object.
+-----------------------------------------------------------------------------------------------------------------------------------------
+VotaYa
+   at VotaYa.Models.Genero.GetGeneros(Int32 cod_ev) in F:\VotaYA!\VotaYa\Models\Genero.cs:line 58
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   error al consultar generos
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 3/6/2022 20:37:45
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: The CommandText property has not been properly initialized.
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(DataSet dataSet, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Services.Utils.MysqlConection.ConsultaAsync(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 185
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   server=200.58.100.110;uid=VotaYa;pwd=MatiCpC2000.; database=votaya;Port=3306;persistsecurityinfo=True;
+   
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 3/6/2022 20:42:19
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'adsasd' in 'field list'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Services.Utils.MysqlConection.Consulta(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 161
+   at Services.Utils.MysqlConection.Consulta(String pQuery) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 201
+   at VotaYa.Models.Genero.RegistrarGenero(String nombre, String descripcion) in F:\VotaYA!\VotaYa\Models\Genero.cs:line 35
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   Error al registrar el Genero adsasd
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 3/6/2022 20:46:09
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'dsa' in 'field list'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Services.Utils.MysqlConection.Consulta(String pQuery, MySqlConnection oConexion) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 161
+   at Services.Utils.MysqlConection.Consulta(String pQuery) in F:\VotaYA!\VotaYa\Services\MysqlConection.cs:line 201
+   at VotaYa.Models.Genero.RegistrarGenero(String nombre, String descripcion, String cod_ev) in F:\VotaYA!\VotaYa\Models\Genero.cs:line 35
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   Error al registrar el Genero dsa
+=========================================================================================================================================
+=========================================================================================================================================
+    DateTime: 3/6/2022 20:46:31
+-----------------------------------------------------------------------------------------------------------------------------------------
+       Error: Unknown column 'dsa' in 'field list'
+-----------------------------------------------------------------------------------------------------------------------------------------
+MySql.Data
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Services.Utils.MysqlConection.Consulta(String pQuery, MySqlConnection oConexion)
+   at Services.Utils.MysqlConection.Consulta(String pQuery)
+   at VotaYa.Models.Genero.RegistrarGenero(String nombre, String descripcion, String cod_ev)
+
+** COOPERATIVA: 0**INFORMACION EXTRA**
+   Error al registrar el Genero dsa
+=========================================================================================================================================

@@ -7,7 +7,7 @@
 <div id="grilla" class="flex-wrap" style="display: flex; justify-content: center; align-items: center; align-content: space-evenly">
     @foreach (var show in Model.oShows)
     {
-        <div id="@show.Descripcion.Replace(" ", "-")" class="card card-flip p-3 m-4" onclick="" data-CodEvento="@show" style="width: 18rem;">
+        <div id="@show.Descripcion.Replace(" ", "-")" class="card card-flip p-3 m-4" onclick="" data-CodEvento="@show">
             <div class="card-front w-100 h-100">
                 <div class="card-body">
                     <h5 class="card-title">@show.Descripcion</h5>
@@ -17,15 +17,15 @@
                     }
                     else if (show.Estado == Models.Show.estadoShow.Siguiente)
                     {
-                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-warning border-opacity-10 rounded-2">@show.Estado</small>
+                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-warning bg-warning bg-opacity-10 border border-warning border-opacity-10 rounded-2">@show.Estado</small>
                     }
                     else if (show.Estado == Models.Show.estadoShow.Cancelado)
                     {
-                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-danger border-opacity-10 rounded-2">@show.Estado</small>
+                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-danger bg-danger bg-opacity-10 border border-danger border-opacity-10 rounded-2">@show.Estado</small>
                     }
                     else if (show.Estado == Models.Show.estadoShow.Finalizado)
                     {
-                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-info border-opacity-10 rounded-2">@show.Estado</small>
+                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-info bg-info bg-opacity-10 border border-info border-opacity-10 rounded-2">@show.Estado</small>
                     }
 
                     <ul class="list-group list-group-flush bg-transparent w-100">
@@ -45,13 +45,245 @@
                 </div>
             </div>
             <div class="card-back w-100  h-100 d-flex flex-column justify-content-center align-items-center ">
+                @if (ViewData["Host"] != null && (bool)ViewData["Host"])
+                {
+                    <div>
+                        <button href="#" class="btn btn-outline-danger m-3"><i class="fa-solid fa-user-slash mr-2"> </i>Eliminar</button>
+                    </div>
+                    <div>
+                        <button href="#" class="btn btn-outline-primary m-3"><i class="fa-solid fa-pen-to-square mr-2"> </i>Editar</button>
+                    </div>
+                }
                 <div>
-                    <button href="#" class="btn btn-outline-danger m-3"><i class="fa-solid fa-user-slash"></i>Eliminar</button>
-                </div>
-                <div>
-                    <button href="#" class="btn btn-outline-primary m-3"><i class="fa-solid fa-pen-to-square"></i>Editar</button>
+                    <button href="#" class="btn btn-outline-warning m-3"><i class="bi bi-trophy-fill mr-2"> </i>Votar</button>
                 </div>
             </div>
         </div>
     }
 </div>
+@*Crear Show*@
+<div class="modal fade" id="ModalCrearShow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Cargar Show</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="Registro" method="post">
+                    <div class="form-group" style="width:100%">
+                        <div class="d-flex flex-row justify-content-center align-items-center w-100 mb-3">
+                            <div class="input-group mb-3 w-100">
+                                <div class="fake_placeholder formRegistro m-0 ml-3">
+                                    <label class="label w-100 m-0" style="border-radius:10px;">
+                                        <span>Nombre</span>
+                                        <input id="nombreShow" class="inputs w-100" type="text" name="nombreShow" autocomplete="off" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 w-100">
+                            <button class="btn btn-outline-secondary dropdown-toggle w-25" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=" bi bi-person-plus-fill mr-2"></i>Artistas</button>
+                            <ul class="dropdown-menu">
+                                @foreach (var artista in (from art in Model.oArtistas
+                                                         join evento in Model.oEventos on art.cod_ev equals evento.COD_EV
+                                                         where (evento.COD_EV == Convert.ToInt32(ViewData["Cod_ev"]))
+                                                         select new Models.Artista
+                                                         {
+                                                             COD_ART = art.COD_ART,
+                                                             Alias = art.Alias,
+                                                             Nombre = art.Nombre,
+                                                             Foto = art.Foto,
+                                                         }).ToList())
+                                {
+                                    <li class="w-100">
+                                        <button class="dropdown-item" onclick="CargarArtista('@artista.Nombre (@artista.Alias)', '@artista.COD_ART')" type="button">@artista.Nombre (@artista.Alias)</button>
+                                    </li>
+                                }
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="nav-item navicons">
+                                    <a href="#ModalCrearArtista" data-toggle="modal" data-target="#ModalCrearArtista" class="nav-link px-0 align-middle">
+                                        <span class="ms-2 d-none d-sm-inline"><i id="icons" class=" bi bi-person-plus-fill"></i> Nuevo Artista</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <input id="txtArtista" readonly type="text" class="form-control" data-codArt="" aria-label="Text input with dropdown button">
+                        </div>
+                        <div class="input-group mb-3 w-100">
+                            <button class="btn btn-outline-secondary dropdown-toggle w-25" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=" bi bi-grid mr-2"></i>Temática</button>
+                            <ul class="dropdown-menu">
+                                @foreach (var tematica in Model.oGeneros)
+                                {
+                                    <li class="w-100">
+                                        <button class="dropdown-item" onclick="CargarGenero('@tematica.Nombre', '@tematica.COD_GEN')" type="button">@tematica.Nombre</button>
+                                    </li>
+                                }
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="nav-item navicons">
+                                    <a href="#ModalCrearGenero" data-toggle="modal" data-target="#ModalCrearGenero" class="nav-link px-0 align-middle">
+                                        <span class="ms-2 d-none d-sm-inline"><i class=" bi bi-grid mr-2"></i> Nueva Temática</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <input id="txtTematica" readonly type="text" class="form-control" data-codTem="" aria-label="Text input with dropdown button">
+                        </div>
+                    </div>
+                    <label for="descripcionShow">Descripcion</label>
+                    <textarea class="form-control" id="descripcionShow" rows="3"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="GuardarUsuario" type="button" onclick="RegistrarEvento()" class="btn btn-outline-dark">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+@*Crear Artista*@
+<div class="modal fade" id="ModalCrearArtista" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Nuevo Artista</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="Registro" method="post" enctype="multipart/form-data">
+                    <div class="form-group" style="width:100%">
+                        <div class="d-flex flex-row justify-content-center align-items-center w-100 mb-3">
+                            <div class="fake_placeholder formRegistro m-0 ml-3">
+                                <label class="label w-100 m-0" style="border-radius:10px;">
+                                    <span>Nombre</span>
+                                    <input id="nombreArt" asp-for="NombreArt" class="inputs w-100" type="text" name="NombreArt" autocomplete="off" />
+                                </label>
+                            </div>
+                            <div class="fake_placeholder formRegistro m-0 ml-3">
+                                <label class="label w-100 m-0" style="border-radius:10px;">
+                                    <span>Alias</span>
+                                    <input asp-for="Alias" id="Alias" class="inputs w-100" type="text" name="Alias" autocomplete="off" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="file-field d-flex justify-content-center align-items-center flex-column">
+                            <div class="mb-4">
+                                <img src="./img/placeholder-avatar.jpg"
+                                     class="rounded-circle z-depth-1-half avatar-pic" alt="example placeholder avatar">
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="btn btn-mdb-color btn-rounded float-left">
+                                    <span>Agregar Foto</span>
+                                    <input id="foto" asp-for="Foto" type="file">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button id="GuardarUsuario" type="submit" asp-page-handler="AgregarArtista" class="btn btn-outline-dark">Guardar Cambios</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+@*Crear Genero*@
+<div class="modal fade" id="ModalCrearGenero" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Cargar Genero</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="RegistroGenero" method="post">
+                    <div class="form-group" style="width:100%">
+                        <div class="d-flex flex-row justify-content-center align-items-center w-100 mb-3">
+                            <div class="input-group mb-3 w-100">
+                                <div class="fake_placeholder formRegistro m-0 ml-3">
+                                    <label class="label w-100 m-0" style="border-radius:10px;">
+                                        <span>Nombre</span>
+                                        <input id="nombreTematica" class="inputs w-100" type="text" name="nombreTematica" autocomplete="off" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="descripcionTematica">Descripcion</label>
+                    <textarea class="form-control" id="descripcionTematica" rows="3"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="GuardarUsuario" type="button" onclick="RegistrarTematica()" class="btn btn-outline-dark">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function CargarArtista(artista, codart) {
+        document.getElementById("txtArtista").value = artista;
+        document.getElementById("txtArtista").dataset.codArt = codart;
+    }
+
+    function CargarGenero(tematica, codgen) {
+        document.getElementById("txtTematica").value = tematica;
+        document.getElementById("txtTematica").dataset.codTem = codgen;
+    }
+    var _foto = document.getElementById("foto").addEventListener('change', function () {
+
+        var reader = new FileReader();
+        reader.onload = function () {
+
+            var arrayBuffer = this.result,
+                array = new Uint8Array(arrayBuffer),
+                binaryString = String.fromCharCode.apply(null, array);
+            document.getElementById("bytes").value = array;
+
+        }
+        reader.readAsArrayBuffer(this.files[0]);
+    }, false);;
+
+    function RegistrarTematica() {
+
+        var _nombre = document.getElementById('nombreTematica').value;
+        var _desc = document.getElementById("descripcionTematica").value;
+
+        $.ajax({
+            type: 'GET',
+            url: '?handler=AgregarTematica',
+            async: false,
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json; charset=utf-8', 'Accept': '*/*' },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("RequestVerificationToken",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            },
+            dataType: 'html',
+            data: ({
+                nombre: _nombre,
+                descripcion: _desc
+            }),
+            cache: false,
+            traditional: true,
+            contentType: 'application/json',
+            success: function (response) {
+                var obj = JSON.parse(response);
+                if (obj.Resultado == true) {
+                    showToast(obj.Respuesta);
+                    window.location.reload();
+                }
+                else {
+                    showToast(obj.Respuesta);
+                }
+            }
+        })
+    };
+</script>

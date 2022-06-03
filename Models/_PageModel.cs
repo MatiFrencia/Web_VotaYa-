@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using VotaYa.Datos;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Services.Utils;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,18 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Text;
+using VotaYa.Util;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace VotaYa.Models
 {
     public class _PageModel : PageModel
     {
+        protected readonly WebdbContext _db;
+
         public class ResultResponse
         {
             [JsonPropertyName("Respuesta")]
@@ -29,14 +37,30 @@ namespace VotaYa.Models
         public List<Voto> oVotos { get; set; }
         public List<Usuario> oUsuarios { get; set; }
         public List<Terna> oTernas { get; set; }
+        public List<Genero> oGeneros { get; set; }
         public List<Participacion> oParticipantes { get; set; }
         public List<Participacion> oParticipaciones { get; set; }
         public List<Show> oShows { get; set; }
         public List<Evento> oEventos { get; set; }
         public Participacion oHost { get; set; }
-
+        [BindProperty]
+        public IFormFile Foto { get; set; }
+        [BindProperty]
+        public string Alias { get; set; }
+        [BindProperty]
+        public string NombreArt { get; set; }
 
         #region Cargar objetos
+        public async Task<bool> GetGeneros(int cod_ev)
+        {
+            Genero clsGeneros = new Genero();
+
+            oGeneros = await clsGeneros.GetGeneros(cod_ev);
+
+            if (oGeneros != null)
+                return true;
+            return false;
+        }
         public async Task<bool> GetArtistas(int COD_EV, int COD_ART = 0)
         {
             Artista clsArtista = new Artista();
@@ -113,6 +137,14 @@ namespace VotaYa.Models
 
             return creado;
         }
+        public async Task<bool> RegistrarTematica(string nombre, string descripcion, string cod_ev)
+        {
+            Genero clsGenero = new Genero();
+
+            bool creado = await clsGenero.RegistrarGenero(nombre, descripcion, cod_ev);
+
+            return creado;
+        }
         public async Task<bool> IngresarEvento(string codigo, string cod_user)
         {
             Evento clsEvento = new Evento();
@@ -121,7 +153,7 @@ namespace VotaYa.Models
 
             return creado;
         }
-        
+
         public async Task<int> RegistrarParticipacion(string cod_ev, string cod_user, bool host)
         {
             Participacion clsEvento = new Participacion();
@@ -130,7 +162,7 @@ namespace VotaYa.Models
 
             return creado;
         }
-        
+
         public async Task<bool> GetEventos(int COD_USER, int COD_EV = 0)
         {
             Evento clsEvento = new Evento();
@@ -186,6 +218,36 @@ namespace VotaYa.Models
             }
             catch (Exception ex)
             {
+                return false;
+            }
+        }
+        public async Task<bool> RegistrarArtista()
+        {
+            try
+            {
+                using (var oConexion = new MysqlConection())
+                {
+                    using (var ms = new MemoryStream())
+                    {
+                        Foto.CopyTo(ms);
+                        var fileBytes = ms.ToArray();
+                        string s = Convert.ToBase64String(fileBytes);
+                        // act on the Base64 data
+
+                        Artista oArtista = new Artista()
+                        {
+                            Nombre = NombreArt,
+                            Alias = Alias,
+                            Foto = new Artista.Imagen() { bytes = fileBytes }
+                        };
+                        oConexion.Consulta($"INSERT INTO artistas (nombre,alias,foto) VALUES ('{oArtista.Nombre}','{oArtista.Alias}','{oArtista.Foto.bytes}')");
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Nucleo.GrabarExcepcion(ex, Convert.ToInt32(NombreArt), new string[] { $"Error al registrar al artista {NombreArt}, {Alias}" });
                 return false;
             }
         }

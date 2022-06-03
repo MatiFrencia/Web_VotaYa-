@@ -11,6 +11,7 @@ namespace VotaYa.Models
     public class Artista
     {
         public int COD_ART { get; set; }
+        public int cod_ev { get; set; }
         public string Nombre { get; set; }
         public string Alias { get; set; }
         public Imagen Foto { get; set; }
@@ -42,16 +43,13 @@ namespace VotaYa.Models
             {
                 string query = "";
                 if (COD_ART != 0)  //Seleccionar 1 Artista del EVENTO
-                    query = string.Format(@$"SELECT Art.cod_art , Art.nombre, Art.alias, Art.foto
+                    query = string.Format(@$"SELECT *
                                                 FROM artistas Art
-                                                JOIN shows Sho ON Sho.cod_art = Art.cod_art 
-                                                JOIN eventos Ev ON Ev.cod_ev = Sho.cod_ev
-                                                WHERE Art.cod_art = { COD_ART }");
+                                                WHERE cod_art = { COD_ART }");
                 else    //Seleccionar TODOS los Artistas del EVENTO
-                    query = string.Format(@$"SELECT Art.cod_art , Art.nombre, Art.alias, Art.foto
+                    query = string.Format(@$"SELECT Art.cod_art, Art.nombre, Art.cod_ev, Art.alias, Art.foto
                                                 FROM artistas Art
-                                                JOIN shows Sho ON Sho.cod_art = Art.cod_art
-                                                JOIN eventos Ev ON Ev.cod_ev = Sho.cod_ev
+                                                JOIN eventos Ev ON Ev.cod_ev = Art.cod_ev
                                                 WHERE Ev.cod_ev = { COD_EV }");
                 DataTable dtArt = await oConexion.ConsultaAsync(query);
 
@@ -61,6 +59,7 @@ namespace VotaYa.Models
                     {
                         COD_ART = (int)dr["cod_art"],
                         Nombre = (string)dr["nombre"],
+                        cod_ev = (int)dr["cod_ev"],
                         Alias = (string)dr["alias"],
                         Foto = dr["foto"] is DBNull? null : ByteToImage((byte[])dr["foto"])
                 };

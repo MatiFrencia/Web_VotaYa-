@@ -35,7 +35,7 @@ namespace VotaYa.Models
         }
         public async Task<List<Participacion>> GetParticipantes(int COD_EV)
         {
-            List<Participacion> lstReturn = null;
+            List<Participacion> lstReturn = new List<Participacion>();
             using (var oConexion = new MysqlConection())
             {
                 string query = "";
@@ -114,7 +114,7 @@ namespace VotaYa.Models
                 Cod_par = (int)dr["cod_par"],
                 Cod_user = (int)dr["cod_user"],
                 Cod_ev = (int)dr["cod_ev"],
-                Host = (int)dr["host"] == 1,
+                Host = (sbyte)dr["host"] == 1,
             };
             return oParticipacion;
         }

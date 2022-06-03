@@ -53,6 +53,14 @@ input, select, textarea, span {
     font-size: 80px;
 }
 
+#bodyimg {
+    background: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../img/telon-teatro_destacado.png");
+    backdrop-filter: blur(.2em);
+}
+
 #Contenedor {
     background: rgb(0,0,0);
     background: -moz-linear-gradient(45deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 75%, rgba(0,0,0,0.5942752100840336) 100%);
@@ -127,6 +135,10 @@ html {
 }
 .nav-item{
     width:100%;
+}
+
+.avatar-pic {
+    width: 150px;
 }
 
 
