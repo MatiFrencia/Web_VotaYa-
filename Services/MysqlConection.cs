@@ -76,8 +76,9 @@ namespace Services.Utils
 
                 if (ObjAnonimo.GetType() == Type.GetType("VotaYa.Models.Evento"))
                 {
+                    Random r = new Random();
                     Evento evento = (Evento)ObjAnonimo;
-                    cmd = new MySqlCommand($"Insert INTO eventos(nombre, descripcion, estado, fecha_creacion, fecha_inicio, host) VALUES ('{evento.Nombre}','{evento.Descripcion}','0','{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}','{evento.FechaInicio.ToString("yyyy-MM-dd hh:mm:ss")}','{evento.Host.Cod_user}')", oConexionGral, tr);
+                    cmd = new MySqlCommand($"Insert INTO eventos(nombre, descripcion, estado, fecha_creacion, fecha_inicio, host, codigo) VALUES ('{evento.Nombre}','{evento.Descripcion}','0','{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}','{evento.FechaInicio.ToString("yyyy-MM-dd hh:mm:ss")}','{evento.Host.Cod_user}', '{r.Next(100000,999999)}')", oConexionGral, tr);
                     cmd.ExecuteNonQuery();
 
                     Participacion host = evento.Host;

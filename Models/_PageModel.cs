@@ -139,13 +139,13 @@ namespace VotaYa.Models
                 return true;
             return false;
         }
-        public async Task<bool> RegistrarEvento(string nombre, string descripcion, string fechaInicio, string cod_user)
+        public async Task<string> RegistrarEvento(string nombre, string descripcion, string fechaInicio, string cod_user)
         {
             Evento clsEvento = new Evento();
 
-            bool creado = await clsEvento.RegistrarEvento(nombre, descripcion, fechaInicio, cod_user);
+            string codigo = await clsEvento.RegistrarEvento(nombre, descripcion, fechaInicio, cod_user);
 
-            return creado;
+            return codigo;
         }
         public async Task<bool> RegistrarTematica(string nombre, string descripcion, string cod_ev)
         {

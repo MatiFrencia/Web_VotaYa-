@@ -41,10 +41,10 @@ namespace VotaYa.Pages
             ViewData["Eventos"] = true;
             ViewData["Usuario"] = oUsuarios.FirstOrDefault(x => x.Cod_user == Convert.ToInt32(Request.Cookies["user"])).Nombre;
             ViewData["MostrarLayout"] = true;
-            bool creado = await RegistrarEvento(nombre, descripcion, FechaInicio, Request.Cookies["user"]);
-            if (creado)
+            string codigo = await RegistrarEvento(nombre, descripcion, FechaInicio, Request.Cookies["user"]);
+            if (!string.IsNullOrEmpty(codigo))
             {
-                result = new ResultResponse() { Respuesta = "Evento Registrado", Resultado = true, strExtra = "" };
+                result = new ResultResponse() { Respuesta = $"Evento Registrado, codigo: {codigo}", Resultado = true, strExtra = "" };
             }
             else
                 result = new ResultResponse() { Respuesta = "Hubo un problema al intentar registrar el evento", Resultado = false, strExtra = "" };

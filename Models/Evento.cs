@@ -28,7 +28,7 @@ namespace VotaYa.Models
             Finalizado
         }
 
-        public async Task<bool> RegistrarEvento(string nombre, string descripcion, string fechaInicio, string cod_user)
+        public async Task<string> RegistrarEvento(string nombre, string descripcion, string fechaInicio, string cod_user)
         {
             try
             {
@@ -53,7 +53,17 @@ namespace VotaYa.Models
                     bool creado = oConexion.Transaccion(NuevoEvento);
                     oConexion.Consulta("SET FOREIGN_KEY_CHECKS = 1;");
                     oConexion.Consulta("UNLOCK TABLES");
-                    return creado;
+                    string codigo = "";
+                    if (creado)
+                    {
+                        DataTable DT = oConexion.Consulta($"select codigo from eventos where nombre = '{nombre}' and host = {cod_user}");
+                        foreach (DataRow dr in DT.Rows)
+                        {
+                            codigo = (string)dr["codigo"];
+                        }
+                    }
+
+                    return codigo;
                 }
             }
             catch (Exception ex)
@@ -64,7 +74,7 @@ namespace VotaYa.Models
                     oConexion.Consulta("UNLOCK TABLES");
                     oConexion.Consulta("SET FOREIGN_KEY_CHECKS = 1;");
                 }
-                return false;
+                return "";
             }
         }
         public async Task<List<Show>> CalcularGanadores()

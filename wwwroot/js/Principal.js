@@ -40,7 +40,6 @@ function RegistrarEvento() {
             var obj = JSON.parse(response);
             if (obj.Resultado == true) {
                 showToast(obj.Respuesta);
-                window.location.reload();
             }
             else {
                 showToast(obj.Respuesta);
