@@ -4,36 +4,29 @@
     ViewData["Title"] = "Principal";
 }
 
-<div id="ContenedorPrincipal" class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="left: 0; right: 0; padding-bottom: 10em">
     <div class="text-center">
         <div class="w-100 d-flex justify-content-center align-content-center">
-            @if (ViewData["Usuario"] != null)
-            {
-                <h1 id="bienvenida" class="txtDoble">Mis Eventos</h1>
-            }
-            else
-            {
-                <h1 id="bienvenida">Bienvenido !!</h1>
-            }
+                <h1 id="bienvenida" class="txtDoble">Eventos</h1>
         </div>
-        <div id="grilla" class="flex-wrap" style="display: flex; justify-content: center; align-items: center; align-content: space-evenly">
-            @foreach (var evento in Model.oEventos)
-            {
-                <div id="@evento.Nombre.Replace(" ", "-")" class="card p-3 m-4" onclick="irAEvento(this)" data-CodEvento="@evento.COD_EV">
-                    <div class="card-body">
-                        <h5 class="card-title">@evento.Nombre</h5>
-                        <p class="card-text">@evento.Descripcion</p>
+        <div id="ContenedorGrilla" class="overflow-auto">
+            <div id="grilla">
+                @foreach (var evento in Model.oEventos)
+                {
+                    <div id="@evento.Nombre.Replace(" ", "-")" class="card p-3 m-4" onclick="irAEvento(this)" data-CodEvento="@evento.COD_EV">
+                        <div class="card-body">
+                            <h5 class="card-title">@evento.Nombre</h5>
+                            <p class="card-text">@evento.Descripcion</p>
+                        </div>
+                        <ul class="list-group list-group-flush bg-transparent w-100">
+                            <li class="list-group-item bg-transparent">@evento.FechaInicio.ToShortDateString()</li>
+                            <li class="list-group-item bg-transparent">@evento.FechaInicio.ToShortTimeString()</li>
+                            <li class="list-group-item bg-transparent">@evento.Estado</li>
+                        </ul>
                     </div>
-                    <ul class="list-group list-group-flush bg-transparent w-100">
-                        <li class="list-group-item bg-transparent">@evento.FechaInicio.ToShortDateString()</li>
-                        <li class="list-group-item bg-transparent">@evento.FechaInicio.ToShortTimeString()</li>
-                        <li class="list-group-item bg-transparent">@evento.Estado</li>
-                    </ul>
-                </div>
-            }
+                }
+            </div>
         </div>
     </div>
-</div>
 @*Agregar Evento*@
 <div class="modal fade" id="ModalAddEvento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">

@@ -4,45 +4,43 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using VotaYa.Util;
 
 namespace VotaYa.Models
 {
     public class Voto
     {
         public int COD_VOT { get; set; }
-        public Show oShow { get; set; }
-        public Participacion oParticipante { get; set; }
-        public DateTime Fecha { get; set; }
-        public Terna oTerna { get; set; }
+        public int Cod_ter { get; set; }
+        public int Cod_art { get; set; }
+        public int Cod_part { get; set; }
+        public int Cod_votac { get; set; }
 
 
-        public async Task<Voto> CrearVoto (DataRow dr)
+        public async Task<Voto> CrearVoto(DataRow dr)
         {
             Participacion clsPart = new Participacion();
-            Show clsShow= new Show();
+            Show clsShow = new Show();
             Terna clsTerna = new Terna();
 
             Voto oVoto = new Voto()
             {
                 COD_VOT = (int)dr["cod_vot"],
-                Fecha = (System.DateTime)dr["fecha"],
-                oParticipante = (await clsPart.GetParticipaciones((int)dr["cod_par"])).FirstOrDefault(),
-                oShow = (await clsShow.GetShow((int)dr["cod_show"])).FirstOrDefault(),
-                oTerna = (await clsTerna.GetTerna((int)dr["cod_ter"])).FirstOrDefault()
+                Cod_ter = (int)dr["Cod_ter"],
+                Cod_art = (int)dr["Cod_art"],
+                Cod_part = (int)dr["Cod_part"],
+                Cod_votac = (int)dr["Cod_votac"]
             };
             return oVoto;
         }
 
-        public async Task<List<Voto>> GetVotos(int COD_EV, int COD_SHOW = 0)
+        public async Task<List<Voto>> GetVotos(int COD_EV)
         {
-            List<Voto> lstReturn = null;
+            List<Voto> lstReturn = new List<Voto>();
             using (var oConexion = new MysqlConection())
             {
                 string query = "";
-                if (COD_SHOW != 0)  //Seleccionar 1 Voto del EVENTO
-                    query = string.Format("Select * from votos where cod_show = {0} AND cod_ev = {1}", COD_SHOW.ToString(), COD_EV.ToString());
-                else    //Seleccionar TODOS los Votos del EVENTO
-                    query = string.Format("Select * from votos where cod_ev = {0}", COD_EV.ToString());
+                    query = @$"Select * from votos Vot JOIN votacion Votac ON Vot.cod_votac = Votac.cod_votac where Votac.cod_ev = {COD_EV}";
                 DataTable dtArt = await oConexion.ConsultaAsync(query);
 
                 foreach (DataRow dr in dtArt.Rows)
@@ -51,6 +49,31 @@ namespace VotaYa.Models
                     lstReturn.Add(oVoto);
                 }
                 return lstReturn;
+            }
+        }
+
+        public async Task<bool> RegistrarVoto(string votos, string cod_ev, string cod_part, string cod_votac)
+        {
+            var lstVotos = votos.Split(",");
+            try
+            {
+                using (var oConexion = new MysqlConection())
+                {
+                    foreach (string voto in lstVotos)
+                    {
+                        if (!string.IsNullOrEmpty(voto))
+                        {
+                            var query = $"INSERT INTO votos (cod_ter, cod_art, cod_part, cod_votac) VALUES ({voto.Split("|")[0]},{voto.Split("|")[1]},{cod_part},{cod_votac})";
+                            await oConexion.EjecutarcomandoAsync(query);
+                        }
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Nucleo.GrabarExcepcion(ex, Convert.ToInt32(cod_ev), new string[] { $"Error al registrar votos: {votos}" });
+                return false;
             }
         }
     }

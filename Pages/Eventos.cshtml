@@ -3,63 +3,86 @@
 @{
     ViewData["Title"] = Model.oEventos.FirstOrDefault(x => x.COD_EV == Convert.ToInt32(ViewData["Cod_ev"])).Nombre;
 }
-
-<div id="grilla" class="flex-wrap" style="display: flex; justify-content: center; align-items: center; align-content: space-evenly">
-    @foreach (var show in Model.oShows)
-    {
-        <div id="@show.Descripcion.Replace(" ", "-")" class="card card-flip p-3 m-4" onclick="" data-CodEvento="@show">
-            <div class="card-front w-100 h-100">
-                <div class="card-body">
-                    <h5 class="card-title">@show.Descripcion</h5>
-                    @if (show.Estado == Models.Show.estadoShow.En_curso)
-                    {
-                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-success border-opacity-10 rounded-2">@show.Estado</small>
-                    }
-                    else if (show.Estado == Models.Show.estadoShow.Siguiente)
-                    {
-                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-warning bg-warning bg-opacity-10 border border-warning border-opacity-10 rounded-2">@show.Estado</small>
-                    }
-                    else if (show.Estado == Models.Show.estadoShow.Cancelado)
-                    {
-                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-danger bg-danger bg-opacity-10 border border-danger border-opacity-10 rounded-2">@show.Estado</small>
-                    }
-                    else if (show.Estado == Models.Show.estadoShow.Finalizado)
-                    {
-                        <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-info bg-info bg-opacity-10 border border-info border-opacity-10 rounded-2">@show.Estado</small>
-                    }
-
-                    <ul class="list-group list-group-flush bg-transparent w-100">
-                        <li class="list-group-item bg-transparent">
+<div class="text-center">
+    <div class="w-100 d-flex justify-content-center align-content-center">
+        <h1 id="bienvenida" class="txtDoble">Shows</h1>
+    </div>
+    <div id="ContenedorGrilla" class="overflow-auto">
+        <div id="grilla">
+            @foreach (var show in Model.oShows)
+            {
+                <div id="@show.Descripcion.Replace(" ", "-")" class="card card-flip p-3 m-4" onclick="" data-CodEvento="@show">
+                    <div class="card-front w-100 h-100">
+                        <div class="card-body">
                             @if (@Model.oArtistas.FirstOrDefault(x => x.COD_ART == show.cod_art).Foto != null)
                             {
-                                <img class="w-100" src="@Model.oArtistas.FirstOrDefault(x => x.COD_ART == show.cod_art).Foto.Url" />
+                                <img class="w-100 rounded" src="@Model.oArtistas.FirstOrDefault(x => x.COD_ART == show.cod_art).Foto.Url" />
+                                <h5 class="card-title mt-4">@show.Descripcion</h5>
                             }
                             else
                             {
                                 <img class="w-100" src="./img/user_default.png" />
+                                <h5 class="card-title">@show.Descripcion</h5>
                             }
-                        </li>
-                        <li class="list-group-item bg-transparent">@Model.oArtistas.FirstOrDefault(x => x.COD_ART == show.cod_art).Alias</li>
-                        <li class="list-group-item bg-transparent">@Model.oArtistas.FirstOrDefault(x => x.COD_ART == show.cod_art).Nombre</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-back w-100  h-100 d-flex flex-column justify-content-center align-items-center ">
-                @if (ViewData["Host"] != null && (bool)ViewData["Host"])
-                {
-                    <div>
-                        <button href="#" class="btn btn-outline-danger m-3"><i class="fa-solid fa-user-slash mr-2"> </i>Eliminar</button>
+
+                            <hr />
+                            @if (show.Estado == Models.Show.estadoShow.En_curso)
+                            {
+                                <small class=" estado d-inline-flex mb-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-success border-opacity-10 rounded-2">@show.Estado</small>
+                            }
+                            else if (show.Estado == Models.Show.estadoShow.Siguiente)
+                            {
+                                <small class=" estado d-inline-flex mb-3 px-2 py-1 fw-semibold text-warning bg-warning bg-opacity-10 border border-warning border-opacity-10 rounded-2">@show.Estado</small>
+                            }
+                            else if (show.Estado == Models.Show.estadoShow.Proximamente)
+                            {
+                                <small class=" estado d-inline-flex mb-3 px-2 py-1 fw-semibold text-secondary bg-secondary bg-opacity-10 border border-secondary border-opacity-10 rounded-2">@show.Estado</small>
+                            }
+                            else if (show.Estado == Models.Show.estadoShow.Cancelado)
+                            {
+                                <small class=" estado d-inline-flex mb-3 px-2 py-1 fw-semibold text-danger bg-danger bg-opacity-10 border border-danger border-opacity-10 rounded-2">@show.Estado</small>
+                            }
+                            else if (show.Estado == Models.Show.estadoShow.Finalizado)
+                            {
+                                <small class=" estado d-inline-flex mb-3 px-2 py-1 fw-semibold text-info bg-info bg-opacity-10 border border-info border-opacity-10 rounded-2">@show.Estado</small>
+                            }
+
+                            <ul class="list-group list-group-flush bg-transparent w-100">
+                                <li class="list-group-item bg-transparent">@Model.oArtistas.FirstOrDefault(x => x.COD_ART == show.cod_art).Alias</li>
+                                <li class="list-group-item bg-transparent">@Model.oArtistas.FirstOrDefault(x => x.COD_ART == show.cod_art).Nombre</li>
+                                <li class="list-group-item bg-transparent">
+                                    <span class="text-muted">@Model.oGeneros.FirstOrDefault(x => x.COD_GEN == show.cod_gen).Nombre</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <button href="#" class="btn btn-outline-primary m-3"><i class="fa-solid fa-pen-to-square mr-2"> </i>Editar</button>
+                    <div class="card-back w-100  h-100 d-flex flex-column justify-content-center align-items-center ">
+                        @if (ViewData["Host"] != null && (bool)ViewData["Host"])
+                        {
+                            <div>
+                                <button href="#DeleteShow" onclick="SetEstado(this,'DeleteShow')" data-codshow="@show.COD_SHOW" class="btn btn-outline-danger m-3"><i class="fa-solid fa-user-slash">   </i>Eliminar</button>
+                            </div>
+                            <div>
+                                <button href="#SetEnCurso" onclick="SetEstado(this,'SetEnCurso')" data-codshow="@show.COD_SHOW" class="btn btn-outline-success m-3"><i class="fa-solid fa-pen-to-square">   </i>En curso</button>
+                            </div>
+                            <div>
+                                <button href="#SetSiguiente" onclick="SetEstado(this,'SetSiguiente')" data-codshow="@show.COD_SHOW" class="btn btn-outline-warning m-3"><i class="fa-solid fa-pen-to-square">   </i>Siguiente</button>
+                            </div>
+                            <div>
+                                <button href="#SetCancelado" onclick="SetEstado(this,'SetCancelado')" data-codshow="@show.COD_SHOW" class="btn btn-outline-danger m-3"><i class="fa-solid fa-pen-to-square">   </i>Cancelado</button>
+                            </div>
+                            <div>
+                                <button href="#SetFinalizado" onclick="SetEstado(this,'SetFinalizado')" data-codshow="@show.COD_SHOW" class="btn btn-outline-info m-3"><i class="fa-solid fa-pen-to-square">   </i>Finalizado</button>
+                            </div>
+                            <div>
+                                <button href="#SetProximo" onclick="SetEstado(this,'SetProximo')" data-codshow="@show.COD_SHOW" class="btn btn-outline-secondary m-3"><i class="fa-solid fa-pen-to-square">   </i>Proximamente</button>
+                            </div>
+                        }
                     </div>
-                }
-                <div>
-                    <button href="#" class="btn btn-outline-warning m-3"><i class="bi bi-trophy-fill mr-2"> </i>Votar</button>
                 </div>
-            </div>
+            }
         </div>
-    }
+    </div>
 </div>
 @*Crear Show*@
 <div class="modal fade" id="ModalCrearShow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -85,7 +108,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3 w-100">
-                            <button class="btn btn-outline-secondary dropdown-toggle w-25" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=" bi bi-person-plus-fill mr-2"></i>Artistas</button>
+                            <button class="btn btn-outline-secondary dropdown-toggle w-25" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=" bi bi-person-plus-fill">  </i><span class="cboBox">Artistas</span></button>
                             <ul class="dropdown-menu">
                                 @foreach (var artista in (from art in Model.oArtistas
                                                          join evento in Model.oEventos on art.cod_ev equals evento.COD_EV
@@ -112,7 +135,7 @@
                             <input id="txtArtista" readonly type="text" class="form-control" data-codArt="" aria-label="Text input with dropdown button">
                         </div>
                         <div class="input-group mb-3 w-100">
-                            <button class="btn btn-outline-secondary dropdown-toggle w-25" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=" bi bi-grid mr-2"></i>Temática</button>
+                            <button class="btn btn-outline-secondary dropdown-toggle w-25" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=" bi bi-grid">  </i><span class="cboBox">Temática</span></button>
                             <ul class="dropdown-menu">
                                 @foreach (var tematica in Model.oGeneros)
                                 {
@@ -123,20 +146,18 @@
                                 <li><hr class="dropdown-divider"></li>
                                 <li class="nav-item navicons">
                                     <a href="#ModalCrearGenero" data-toggle="modal" data-target="#ModalCrearGenero" class="nav-link px-0 align-middle">
-                                        <span class="ms-2 d-none d-sm-inline"><i class=" bi bi-grid mr-2"></i> Nueva Temática</span>
+                                        <span class="ms-2 d-none d-sm-inline"><i class=" bi bi-grid">  </i> Nueva Temática</span>
                                     </a>
                                 </li>
                             </ul>
                             <input id="txtTematica" readonly type="text" class="form-control" data-codTem="" aria-label="Text input with dropdown button">
                         </div>
                     </div>
-                    <label for="descripcionShow">Descripcion</label>
-                    <textarea class="form-control" id="descripcionShow" rows="3"></textarea>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button id="GuardarUsuario" type="button" onclick="RegistrarEvento()" class="btn btn-outline-dark">Guardar cambios</button>
+                <button id="GuardarUsuario" type="button" onclick="RegistrarShow()" class="btn btn-outline-dark">Guardar cambios</button>
             </div>
         </div>
     </div>
@@ -226,11 +247,288 @@
         </div>
     </div>
 </div>
+@*Crear Ternas*@
+<div class="modal fade" id="ModalCrearTerna" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Cargar Terna</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="RegistroTerna" method="post">
+                    <div class="form-group" style="width:100%">
+                        <div class="d-flex flex-row justify-content-center align-items-center w-100 mb-3">
+                            <div class="input-group mb-3 w-100">
+                                <div class="fake_placeholder formRegistro m-0 ml-3">
+                                    <label class="label w-100 m-0" style="border-radius:10px;">
+                                        <span>Nombre</span>
+                                        <input id="nombreTerna" class="inputs w-100" type="text" name="nombreTerna" autocomplete="off" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="descripcionTerna">Descripcion</label>
+                    <textarea class="form-control" id="descripcionTerna" rows="3"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="GuardarUsuario" type="button" onclick="RegistrarTerna()" class="btn btn-outline-dark">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
 
+@*Modal Votar*@
+<div class="modal fade" id="ModalVotar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Realizá tu voto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="RegistroVoto" method="post">
+                    <span class="text-muted">Solo se permite 1 voto por persona!!</span>
+                    <div class="form-group" style="width:100%">
+                        <div class="d-flex flex-row justify-content-center align-items-center w-100 mb-3">
+                            <div class="input-group mb-3 w-100">
+                                @foreach (var terna in Model.oTernas)
+                                {
+                                    <label for="@terna.Nombre">@terna.Nombre</label>
+                                    <div class="input-group mb-3 w-100">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-25" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=" bi bi-person-plus-fill">  </i><span class="cboBox">Artistas</span></button>
+                                        <ul class="dropdown-menu">
+                                            @foreach (var artista in (from art in Model.oArtistas
+                                                                     join evento in Model.oEventos on art.cod_ev equals evento.COD_EV
+                                                                     where (evento.COD_EV == Convert.ToInt32(ViewData["Cod_ev"]))
+                                                                     select new Models.Artista
+                                                                     {
+                                                                         COD_ART = art.COD_ART,
+                                                                         Alias = art.Alias,
+                                                                         Nombre = art.Nombre,
+                                                                         Foto = art.Foto,
+                                                                     }).ToList())
+                                            {
+                                                <li class="w-100">
+                                                    <button class="dropdown-item" onclick="CargarArtistaVotacion('@artista.Nombre (@artista.Alias)', '@artista.COD_ART', '@terna.COD_TER')" type="button">@artista.Nombre (@artista.Alias)</button>
+                                                </li>
+                                            }
+                                        </ul>
+                                        <input id="Votacion_@terna.COD_TER" readonly type="text" class="form-control inputVoto" data-codTerna="@terna.COD_TER" data-codArt="" aria-label="Text input with dropdown button">
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button id="GuardarUsuario" type="button" onclick="RegistrarVoto()" class="btn btn-outline-dark">Enviar Voto</button>
+            </div>
+        </div>
+    </div>
+</div>
+@*INICIAR VOTACION*@
+<div id="ModalHabilitarVot" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Iniciar Votación</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Seguro que desea INICIAR una votación?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" onclick="IniciarVotacion(@ViewData["Cod_ev"].ToString())" class="btn btn-primary">Si</button>
+            </div>
+        </div>
+    </div>
+</div>
+@*FINALIZAR VOTACION*@
+<div id="ModalFinalizarVot" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Finalizar Votación</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Seguro que desea FINALIZAR la votación?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" onclick="CerrarVotacion(@ViewData["Cod_ev"].ToString())" class="btn btn-primary">Si</button>
+            </div>
+        </div>
+    </div>
+</div>
+@if (!(ViewData["Votaciones"] != null && (bool)ViewData["Votaciones"]))
+{
+    @if (ViewData["VotacionTerminada"] != null && (bool)ViewData["VotacionTerminada"])
+    {
+        @*Mostrar Resultados*@
+        <div id="MostrarResult" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Resultados</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Terna</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Foto</th>
+                                </tr>
+                            </thead>
+                            @foreach (var ganador in Model.oGanadores.OrderBy(x => x.Cant_votos))
+                            {
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">@ganador.Cant_votos</th>
+                                        <td>@Model.oTernas.FirstOrDefault(x => x.COD_TER == ganador.Cod_ter).Nombre</td>
+                                        <td>@Model.oArtistas.FirstOrDefault(x => x.COD_ART == ganador.Cod_art).Nombre</td>
+                                        @if (Model.oArtistas.FirstOrDefault(x => x.COD_ART == ganador.Cod_art).Foto != null)
+                                        {
+                                            <td><img class="w-100 rounded" src="@Model.oArtistas.FirstOrDefault(x => x.COD_ART == ganador.Cod_art).Foto.Url" /></td>
+                                        }
+                                        <td><img class="w-100" src="./img/user_default.png" /></td>
+                                    </tr>
+                                </tbody>
+                            }
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
 <script>
+    function CerrarVotacion(_cod_ev) {
+        $.ajax({
+            type: 'GET',
+            url: '?handler=CerrarVotacion',
+            async: false,
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json; charset=utf-8', 'Accept': '*/*' },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("RequestVerificationToken",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            },
+            dataType: 'html',
+            data: ({
+                cod_ev: _cod_ev
+            }),
+            cache: false,
+            traditional: true,
+            contentType: 'application/json',
+            success: function (response) {
+                var obj = JSON.parse(response);
+                if (obj.Resultado == true) {
+                    showToast(obj.Respuesta);
+                    window.location.reload();
+                }
+                else {
+                    showToast(obj.Respuesta);
+                }
+            }
+        })
+    }
+    function IniciarVotacion(_cod_ev) {
+        $.ajax({
+            type: 'GET',
+            url: '?handler=IniciarVotacion',
+            async: false,
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json; charset=utf-8', 'Accept': '*/*' },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("RequestVerificationToken",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            },
+            dataType: 'html',
+            data: ({
+                cod_ev: _cod_ev
+            }),
+            cache: false,
+            traditional: true,
+            contentType: 'application/json',
+            success: function (response) {
+                var obj = JSON.parse(response);
+                if (obj.Resultado == true) {
+                    showToast(obj.Respuesta);
+                    window.location.reload();
+                }
+                else {
+                    showToast(obj.Respuesta);
+                }
+            }
+        })
+    }
+    function SetEstado(show, _funcion) {
+        var codigo = show.dataset.codshow;
+
+        $.ajax({
+            type: 'GET',
+            url: '?handler=SetShow',
+            async: false,
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json; charset=utf-8', 'Accept': '*/*' },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("RequestVerificationToken",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            },
+            dataType: 'html',
+            data: ({
+                cod_show: codigo,
+                funcion: _funcion
+            }),
+            cache: false,
+            traditional: true,
+            contentType: 'application/json',
+            success: function (response) {
+                var obj = JSON.parse(response);
+                if (obj.Resultado == true) {
+                    showToast(obj.Respuesta);
+                    window.location.reload();
+                }
+                else {
+                    showToast(obj.Respuesta);
+                }
+            }
+        })
+    };
+    if (window.matchMedia("(max-width: 425px)").matches) {
+        console.log(document.getElementsByClassName("cboBox"));
+        for (var i = 0; i < document.getElementsByClassName("cboBox").length; i++) {
+            console.log(document.getElementsByClassName("cboBox"));
+            document.getElementsByClassName("cboBox")[i].innerHTML = "";
+        }
+    }
     function CargarArtista(artista, codart) {
         document.getElementById("txtArtista").value = artista;
         document.getElementById("txtArtista").dataset.codArt = codart;
+    }
+    function CargarArtistaVotacion(artista, codart, codter) {
+        console.log(codter);
+        document.getElementById("Votacion_" + codter).value = artista;
+        document.getElementById("Votacion_" + codter).dataset.codArt = codart;
+        document.getElementById("Votacion_" + codter).dataset.codTerna = codter;
     }
 
     function CargarGenero(tematica, codgen) {
@@ -250,7 +548,78 @@
         }
         reader.readAsArrayBuffer(this.files[0]);
     }, false);;
+    function RegistrarVoto() {
 
+        var listInputs = document.getElementsByClassName("inputVoto");
+        var valores = "";
+        for (var i = 0; i < listInputs.length; i++) {
+            valores += listInputs[i].dataset.codTerna + "|" + listInputs[i].dataset.codArt + ",";
+        }
+
+        $.ajax({
+            type: 'GET',
+            url: '?handler=RegistrarVoto',
+            async: false,
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json; charset=utf-8', 'Accept': '*/*' },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("RequestVerificationToken",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            },
+            dataType: 'html',
+            data: ({
+                votos: valores
+            }),
+            cache: false,
+            traditional: true,
+            contentType: 'application/json',
+            success: function (response) {
+                var obj = JSON.parse(response);
+                if (obj.Resultado == true) {
+                    showToast(obj.Respuesta);
+                    window.location.reload();
+                }
+                else {
+                    showToast(obj.Respuesta);
+                }
+            }
+        })
+    };
+    function RegistrarTerna() {
+
+        var _nombre = document.getElementById('nombreTerna').value;
+        var _desc = document.getElementById("descripcionTerna").value;
+
+        $.ajax({
+            type: 'GET',
+            url: '?handler=AgregarTerna',
+            async: false,
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json; charset=utf-8', 'Accept': '*/*' },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("RequestVerificationToken",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            },
+            dataType: 'html',
+            data: ({
+                nombre: _nombre,
+                descripcion: _desc
+            }),
+            cache: false,
+            traditional: true,
+            contentType: 'application/json',
+            success: function (response) {
+                var obj = JSON.parse(response);
+                if (obj.Resultado == true) {
+                    showToast(obj.Respuesta);
+                    window.location.reload();
+                }
+                else {
+                    showToast(obj.Respuesta);
+                }
+            }
+        })
+    };
     function RegistrarTematica() {
 
         var _nombre = document.getElementById('nombreTematica').value;
@@ -270,6 +639,43 @@
             data: ({
                 nombre: _nombre,
                 descripcion: _desc
+            }),
+            cache: false,
+            traditional: true,
+            contentType: 'application/json',
+            success: function (response) {
+                var obj = JSON.parse(response);
+                if (obj.Resultado == true) {
+                    showToast(obj.Respuesta);
+                    window.location.reload();
+                }
+                else {
+                    showToast(obj.Respuesta);
+                }
+            }
+        })
+    };
+    function RegistrarShow() {
+
+        var _nombre = document.getElementById('nombreShow').value;
+        var _cod_art = document.getElementById("txtArtista").dataset.codArt;
+        var _cod_tem = document.getElementById("txtTematica").dataset.codTem;
+
+        $.ajax({
+            type: 'GET',
+            url: '?handler=AgregarShow',
+            async: false,
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json; charset=utf-8', 'Accept': '*/*' },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("RequestVerificationToken",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            },
+            dataType: 'html',
+            data: ({
+                nombre: _nombre,
+                tematica: _cod_tem,
+                artista: _cod_art
             }),
             cache: false,
             traditional: true,
