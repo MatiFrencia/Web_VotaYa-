@@ -18,13 +18,13 @@ namespace VotaYa.Models
         public class Imagen
         {
             public string Url { get; set; }
-            public byte[] bytes { get; set; }
+            public string Base64 { get; set; }
         }
-        public static Imagen ByteToImage(byte[] array)
+        public static Imagen ByteToImage(string Base64)
         {
             Imagen img = new Imagen();
-            img.bytes = array;
-            img.Url = "data:image;base64," + Convert.ToBase64String(array);
+            img.Base64 = Base64;
+            img.Url = "data:image/jpg;base64," + Base64;
             return img;
         }
 
@@ -61,7 +61,7 @@ namespace VotaYa.Models
                         Nombre = (string)dr["nombre"],
                         cod_ev = (int)dr["cod_ev"],
                         Alias = (string)dr["alias"],
-                        Foto = dr["foto"] is DBNull? null : ByteToImage((byte[])dr["foto"])
+                        Foto = dr["foto"] is DBNull? null : ByteToImage((string)dr["foto"])
                 };
                 lstReturn.Add(oArtista);
             }

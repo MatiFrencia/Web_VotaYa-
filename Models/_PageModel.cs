@@ -32,7 +32,7 @@ namespace VotaYa.Models
             [JsonPropertyName("strExtra")]
             public string strExtra { get; set; }
         }
-
+        public List<Ganadores> oGanadores { get; set; }
         public List<Artista> oArtistas { get; set; }
         public List<Voto> oVotos { get; set; }
         public List<Usuario> oUsuarios { get; set; }
@@ -40,6 +40,7 @@ namespace VotaYa.Models
         public List<Genero> oGeneros { get; set; }
         public List<Participacion> oParticipantes { get; set; }
         public List<Participacion> oParticipaciones { get; set; }
+        public List<Votacion> oVotacion { get; set; }
         public List<Show> oShows { get; set; }
         public List<Evento> oEventos { get; set; }
         public Participacion oHost { get; set; }
@@ -51,6 +52,16 @@ namespace VotaYa.Models
         public string NombreArt { get; set; }
 
         #region Cargar objetos
+        public async Task<bool> GetVotacion(int cod_ev)
+        {
+            Votacion clsVotacion = new Votacion();
+
+            oVotacion = await clsVotacion.GetVotaciones(cod_ev);
+
+            if (oVotacion != null)
+                return true;
+            return false;
+        }
         public async Task<bool> GetGeneros(int cod_ev)
         {
             Genero clsGeneros = new Genero();
@@ -71,11 +82,10 @@ namespace VotaYa.Models
                 return true;
             return false;
         }
-        public async Task<bool> GetVotos(int COD_EV, int COD_SHOW = 0)
+        public async Task<bool> GetVotos(int COD_EV)
         {
             Voto clsVotos = new Voto();
-
-            oVotos = await clsVotos.GetVotos(COD_EV, COD_SHOW);
+            oVotos = await clsVotos.GetVotos(COD_EV);
 
             if (oVotos != null)
                 return true;
@@ -93,11 +103,11 @@ namespace VotaYa.Models
         }
         public async Task<bool> GetTernas(int COD_EV)
         {
-            Participacion clsParticipante = new Participacion();
+            Terna clsTerna = new Terna();
 
-            oParticipantes = await clsParticipante.GetParticipaciones(COD_EV);
+            oTernas = await clsTerna.GetTerna(COD_EV);
 
-            if (oParticipantes != null)
+            if (oTernas != null)
                 return true;
             return false;
         }
@@ -181,6 +191,12 @@ namespace VotaYa.Models
                 return true;
             return false;
         }
+        public async Task<bool> SetShow(string cod_show, string funcion)
+        {
+            Show clsShow = new Show();
+            bool correcto = await clsShow.SetEstado(cod_show, funcion);
+            return correcto;
+        }
 
 
 
@@ -221,7 +237,7 @@ namespace VotaYa.Models
                 return false;
             }
         }
-        public async Task<bool> RegistrarArtista()
+        public async Task<bool> RegistrarArtista(string cod_ev)
         {
             try
             {
@@ -238,9 +254,9 @@ namespace VotaYa.Models
                         {
                             Nombre = NombreArt,
                             Alias = Alias,
-                            Foto = new Artista.Imagen() { bytes = fileBytes }
+                            Foto = new Artista.Imagen() { Base64 = s }
                         };
-                        oConexion.Consulta($"INSERT INTO artistas (nombre,alias,foto) VALUES ('{oArtista.Nombre}','{oArtista.Alias}','{oArtista.Foto.bytes}')");
+                        oConexion.Consulta($"INSERT INTO artistas (nombre,cod_ev,alias,foto) VALUES ('{oArtista.Nombre}', '{cod_ev}', '{oArtista.Alias}','{oArtista.Foto.Base64}')");
                         return true;
                     }
                 }
@@ -250,6 +266,104 @@ namespace VotaYa.Models
                 Nucleo.GrabarExcepcion(ex, Convert.ToInt32(NombreArt), new string[] { $"Error al registrar al artista {NombreArt}, {Alias}" });
                 return false;
             }
+        }
+        public async Task<bool> RegistrarShow(string nombre, string cod_art, string cod_tem, string cod_ev)
+        {
+            try
+            {
+                using (var oConexion = new MysqlConection())
+                {
+                    Show oShow = new Show()
+                    {
+                        cod_ev = Convert.ToInt32(cod_ev),
+                        cod_art = Convert.ToInt32(cod_art),
+                        cod_gen = Convert.ToInt32(cod_tem),
+                        Descripcion = nombre,
+                        Estado = Show.estadoShow.Proximamente
+                    };
+                    oConexion.Consulta($"INSERT INTO shows (descripcion, estado, cod_ev, cod_art, cod_gen) VALUES ('{oShow.Descripcion}','{(int)oShow.Estado}','{oShow.cod_ev}','{cod_art}','{cod_tem}')");
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Nucleo.GrabarExcepcion(ex, Convert.ToInt32(cod_ev), new string[] { $"Error al registrar al show {nombre}, {cod_ev}" });
+                return false;
+            }
+        }
+        public async Task<bool> RegistrarTerna(string nombre, string descripcion, string cod_ev)
+        {
+            Terna clsGenero = new Terna();
+
+            bool creado = await clsGenero.RegistrarTerna(nombre, descripcion, cod_ev);
+
+            return creado;
+        }
+        public async Task<bool> IniciarVotacion(string cod_ev)
+        {
+            Votacion clsVotacion = new Votacion();
+
+            bool iniciada = await clsVotacion.IniciarVotacion(cod_ev);
+
+            return iniciada;
+        }
+        public async Task<bool> GetGanadores(string cod_ev)
+        {
+            List<Ganadores> rtrn = new List<Ganadores>();
+            try
+            {
+                var ultimaVot = oVotacion.OrderBy(x => x.Fecha_inicio).FirstOrDefault(x => x.Estado == Votacion.estado.Cerrada && x.Cod_ev == Convert.ToInt32(cod_ev) && x.Fecha_cierre != null);
+                if (ultimaVot != null)
+                {
+                    foreach (var terna in oTernas)
+                    {
+                        using (var oConexion = new MysqlConection())
+                        {
+                            var query = $"SELECT MAX(cantidad) as cant, cod_art FROM (SELECT count(*) as cantidad,cod_art FROM votaya.votos where cod_ter = {terna.COD_TER} group by cod_art)as T group by cod_art ";
+                            DataTable DT = await oConexion.ConsultaAsync(query);
+                            foreach (DataRow dr in DT.Rows)
+                            {
+                                Ganadores gan = new Ganadores()
+                                {
+                                    Cod_ter = terna.COD_TER,
+                                    Cod_art = Convert.ToInt32(dr["cod_art"]),
+                                    Cant_votos = Convert.ToInt32(dr["cant"])
+                                };
+                                rtrn.Add(gan);
+                            }
+                        }
+                    }
+                }
+                oGanadores = rtrn;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Nucleo.GrabarExcepcion(ex, Convert.ToInt32(cod_ev), new string[] { "Error al obtener ganadores" });
+                return false;
+            }
+        }
+        public async Task<bool> CerrarVotacion(string cod_ev)
+        {
+            Votacion clsVotacion = new Votacion();
+
+            bool iniciada = await clsVotacion.CerrarVotacion(cod_ev);
+            await GetVotacion(Convert.ToInt32(cod_ev));
+            return iniciada;
+        }
+        public async Task<bool> RegistrarVoto(string votos, string cod_ev)
+        {
+            Voto clsVoto = new Voto();
+            Participacion clsPart = new Participacion();
+            var participante = await clsPart.GetParticipante(Convert.ToInt32(cod_ev), Convert.ToInt32(Request.Cookies["user"]));
+            Votacion clsVotac = new Votacion();
+            var votacion = await clsVotac.GetVotacion(Convert.ToInt32(cod_ev));
+            if (oVotos.Where(x => x.Cod_votac == votacion && x.Cod_part == participante.Cod_par).Any())
+                return false;
+
+            bool registrados = await clsVoto.RegistrarVoto(votos, cod_ev, participante.Cod_par.ToString(), votacion.ToString());
+
+            return registrados;
         }
 
         public async Task<bool> EnviarCorreo(string email, string newPWD)

@@ -32,7 +32,7 @@ namespace VotaYa.Models
             {
                 using (var oConexion = new MysqlConection())
                 {
-                    oConexion.Consulta($"INSERT INTO generos (nombre, descripcion, cod_ev) VALUES ('{nombre}','{descripcion}','{cod_ev}')");
+                    await oConexion.ConsultaAsync($"INSERT INTO generos (nombre, descripcion, cod_ev) VALUES ('{nombre}','{descripcion}','{cod_ev}')");
                     return true;
                 }
             }

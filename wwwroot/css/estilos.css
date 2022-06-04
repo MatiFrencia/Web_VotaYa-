@@ -13,19 +13,45 @@
     font-weight: normal;
 }
 
-@media (max-width: 370px) {
-    body{
-        width:27rem;
+@media (max-width: 535px) {
+    #menuLateral {
+        height: 100% !important;
+        max-height: 100% !important;
+        width: 25% !important;
+        max-width: 25% !important;
     }
-    .card{
-        width:18rem;
+
+    .card {
+        font-size: x-small;
+    }
+}
+
+@media (max-width: 370px) {
+    /*    body{
+        width:27rem;
+    }*/
+    .card {
+        width: 18rem;
     }
 }
 
 @media (max-width: 425px) {
+    .card {
+        font-size: small !important;
+    }
+
+    #menuLateral {
+        max-width: 25vw !important;
+    }
+
     #user {
         font-size: 10px !important;
     }
+}
+
+body {
+    width: 100vw;
+    max-width: 100vw;
 }
 
 .nav-link:hover {
@@ -58,10 +84,75 @@ span {
     font-family: "Rocks Personal Use";
     font-style: normal;
 }
+#ContenedorGrilla::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
 
+#ContenedorGrilla::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
 
+#ContenedorGrilla::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffecd2), to(#fcb69f));
+    background-image: -webkit-linear-gradient(left, #ffecd2 0%, #fcb69f 100%);
+    background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+}
+
+#ContenedorGrilla {
+    scrollbar-color: #33b5e5 #F5F5F5;
+}
+#ContenedorGrilla {
+    justify-content: flex-start;
+    height: 90vh;
+    max-height: 100%;
+}
+
+#grilla {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    align-content: start;
+    height: 100%;
+    flex-wrap: wrap;
+    max-height: 80vh;
+}
+
+.container {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    width: 70% !important;
+    max-width: 70% !important;
+    padding: .5em 1em .5em 1em !important;
+    padding: 0 !important;
+}
+
+#menuLateral {
+    height: 100% !important;
+    max-height: 100% !important;
+    width: 30% !important;
+    max-width: 20vw ;
+}
+
+@media (min-width: 1000px) {
+    #menuLateral{
+        max-width:17vw !important;
+    }
+}
+
+.estado {
+    font-family: Arial;
+    font-size: small;
+}
 
 .card {
+    min-height: 20em !important;
+    font-family: fantasy;
+    font-size: x-large;
     width: 18rem;
     opacity: 0;
     border-radius: 4px;
